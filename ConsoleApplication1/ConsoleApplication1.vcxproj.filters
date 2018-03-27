@@ -16,6 +16,12 @@
     <Filter Include="ソース ファイル\OpenGl">
       <UniqueIdentifier>{3f65f5f2-0036-49fe-8eeb-a5945f6939f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{258e0743-a153-4f1a-8828-c0d00f7c1751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneBasic">
+      <UniqueIdentifier>{de451ac6-50fc-487d-a184-3b9c723c370a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -33,6 +39,18 @@
     <ClInclude Include="Shader.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBasic.h">
+      <Filter>ソース ファイル\Scene\SceneBasic</Filter>
+    </ClInclude>
+    <ClInclude Include="Glutils.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="MainView.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -45,6 +63,18 @@
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneBasic.cpp">
+      <Filter>ソース ファイル\Scene\SceneBasic</Filter>
+    </ClCompile>
+    <ClCompile Include="Glutils.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="MainView.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
   </ItemGroup>

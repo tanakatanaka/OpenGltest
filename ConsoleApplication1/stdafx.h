@@ -9,6 +9,9 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include "glew.h"
+#include "sdl.h"
+#include "SDL_opengl.h"
 
 
 

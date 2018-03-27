@@ -1,16 +1,16 @@
 // ConsoleApplication1.cpp : コンソール アプリケーションのエントリ ポイントを定義します。
-//
 
 #include "stdafx.h"
 #include "sdl.h"
 #include "MainLoop.h"
 #include "Shader.h"
+#include "SDL_opengl.h"
+
+#include "mainview.h"
 
 int main(int argc, char *args[])
 {
 	SDL_Window *window;
-    //SDL_Renderer *renderer;
-    //SDL_Surface *surface;
     SDL_Event event;
 
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
@@ -25,9 +25,7 @@ int main(int argc, char *args[])
 	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 	
 	SDL_Init(SDL_INIT_VIDEO);
-
-
-	window = SDL_CreateWindow("SDL2/OpenGL Demo", 0, 0, 640, 480, SDL_WINDOW_OPENGL);
+	window = SDL_CreateWindow("SDL2/OpenGL Demo", 200, 200, 640, 480, SDL_WINDOW_OPENGL);
 
 	if (window == NULL) 
 	{
@@ -37,13 +35,13 @@ int main(int argc, char *args[])
 
 	SDL_GLContext glcontext = SDL_GL_CreateContext(window);
 	MainLoop mainLoop;
-	Shader  shader;
+	MainView mainView;
 	
 	const char*msg = SDL_GetError();
 	printf(msg);
 
 	mainLoop.InitGlew();
-	shader.Load("../Shader/basic.frag");
+	mainView.InitializeGL();
 
 	while (1)
 	{
@@ -52,16 +50,13 @@ int main(int argc, char *args[])
 		{
 			break;
 		}
-		/*
-		SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0x00);
-		SDL_RenderClear(renderer);
-		//SDL_RenderCopy(renderer, texture, NULL, NULL);
-		SDL_RenderPresent(renderer);
-		*/
+		
+		SDL_GL_SwapWindow(window);
+		glClearColor(1,0,0,1);
+		mainView.paintGL();
+
 	}
 
-    //SDL_DestroyTexture(texture);
-    //SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
 
     SDL_Quit();
