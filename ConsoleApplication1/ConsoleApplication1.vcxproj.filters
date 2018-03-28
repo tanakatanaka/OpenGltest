@@ -22,6 +22,12 @@
     <Filter Include="ソース ファイル\Scene\SceneBasic">
       <UniqueIdentifier>{de451ac6-50fc-487d-a184-3b9c723c370a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\ScneUni">
+      <UniqueIdentifier>{1e59342f-325c-4379-b6d1-58e085151a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneBox">
+      <UniqueIdentifier>{9cdaf105-7b70-439a-ae3b-836993193d74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -51,6 +57,12 @@
     <ClInclude Include="MainView.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="SceneUni.h">
+      <Filter>ソース ファイル\Scene\ScneUni</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBox.h">
+      <Filter>ソース ファイル\Scene\SceneBox</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -76,6 +88,12 @@
     </ClCompile>
     <ClCompile Include="MainView.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneUni.cpp">
+      <Filter>ソース ファイル\Scene\ScneUni</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneBox.cpp">
+      <Filter>ソース ファイル\Scene\SceneBox</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

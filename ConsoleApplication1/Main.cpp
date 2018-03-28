@@ -52,9 +52,8 @@ int main(int argc, char *args[])
 		}
 		
 		SDL_GL_SwapWindow(window);
-		glClearColor(1,0,0,1);
+		glClearColor(0,0,0,1); 
 		mainView.paintGL();
-
 	}
 
     SDL_DestroyWindow(window);

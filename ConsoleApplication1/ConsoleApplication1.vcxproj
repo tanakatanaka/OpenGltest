@@ -154,6 +154,8 @@
     <ClInclude Include="SceneBasic.h" />
     <ClInclude Include="MainLoop.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneBox.h" />
+    <ClInclude Include="SceneUni.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -165,6 +167,8 @@
     <ClCompile Include="MainView.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneBasic.cpp" />
+    <ClCompile Include="SceneBox.cpp" />
+    <ClCompile Include="SceneUni.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

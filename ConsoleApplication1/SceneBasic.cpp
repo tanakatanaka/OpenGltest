@@ -21,7 +21,7 @@ void SceneBasic::initScene()
 
 	Shader  VertexShader;
     GLchar * shaderCode;
-	std::string  shaderString = VertexShader.Load("../Shader/basic.frag");
+	std::string  shaderString = VertexShader.Load("../ConsoleApplication1/Shader/basic.vert");
 
 	shaderCode = new char[shaderString.size() + 1]; //ƒƒ‚ƒŠŠm•Û
 	std::char_traits<char>::copy(shaderCode, shaderString.c_str(), shaderString.size() + 1 );
@@ -74,7 +74,7 @@ void SceneBasic::initScene()
     //////////////////////////////////////////////////////
 
     Shader  FragmentShader;
-	std::string  FshaderString = VertexShader.Load("../Shader/basic.frag");
+	std::string  FshaderString = VertexShader.Load("../ConsoleApplication1/Shader/basic.frag");
 
 	shaderCode = new char[FshaderString.size() + 1]; //ƒƒ‚ƒŠŠm•Û
 	std::char_traits<char>::copy(shaderCode, FshaderString.c_str(), FshaderString.size() + 1 );
