@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "mainview.h"
 #include "scenebasic.h"
-#include "sceneBox.h"
+#include "sceneDiffuse.h"
+#include "sceneUni.h"
 #include "glutils.h"
 
 #include <iostream>
@@ -11,7 +12,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = new SceneBox();
+	scene = new SceneUni();
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
 }
