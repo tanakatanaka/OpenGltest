@@ -12,7 +12,8 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = new SceneUni();
+	scene = new SceneDiffuse();
+
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
 }

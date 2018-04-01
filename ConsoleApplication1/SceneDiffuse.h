@@ -9,7 +9,7 @@ using glm::mat4;
 class SceneDiffuse : public Scene
 {
 private:
-    Shader prog;
+    Shader shader_;
 
     int width, height;
     VBOTorus *torus;

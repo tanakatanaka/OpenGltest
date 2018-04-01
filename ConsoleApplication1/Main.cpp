@@ -42,15 +42,22 @@ int main(int argc, char *args[])
 
 	mainLoop.InitGlew();
 	mainView.InitializeGL();
+	mainView.resizeGL(640, 480);
 
 	while (1)
 	{
-		SDL_PollEvent(&event);
-		if (event.type == SDL_QUIT) 
+		while (SDL_PollEvent(&event))
 		{
-			break;
+			if (event.type == SDL_QUIT)
+			{
+				break;
+			}
+			if (event.type == SDL_WINDOWEVENT &&
+				(event.window.event == SDL_WINDOWEVENT_RESIZED))
+			{
+				mainView.resizeGL(event.window.data1, event.window.data2);
+			}
 		}
-		
 		SDL_GL_SwapWindow(window);
 		glClearColor(0,0,0,1); 
 		mainView.paintGL();
