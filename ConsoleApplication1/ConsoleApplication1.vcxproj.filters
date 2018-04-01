@@ -28,6 +28,9 @@
     <Filter Include="ソース ファイル\Scene\SceneBox">
       <UniqueIdentifier>{9cdaf105-7b70-439a-ae3b-836993193d74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneDiffuse">
+      <UniqueIdentifier>{febe8df7-6083-4519-ab53-983356a93f6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -63,6 +66,18 @@
     <ClInclude Include="SceneBox.h">
       <Filter>ソース ファイル\Scene\SceneBox</Filter>
     </ClInclude>
+    <ClInclude Include="SceneDiffuse.h">
+      <Filter>ソース ファイル\Scene\SceneDiffuse</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawAble.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="VboTorus.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -94,6 +109,15 @@
     </ClCompile>
     <ClCompile Include="SceneBox.cpp">
       <Filter>ソース ファイル\Scene\SceneBox</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDiffuse.cpp">
+      <Filter>ソース ファイル\Scene\SceneDiffuse</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawAble.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="VboTorus.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

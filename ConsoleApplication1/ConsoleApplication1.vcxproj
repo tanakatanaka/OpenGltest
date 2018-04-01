@@ -149,18 +149,23 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Defines.h" />
+    <ClInclude Include="DrawAble.h" />
     <ClInclude Include="Glutils.h" />
     <ClInclude Include="MainView.h" />
     <ClInclude Include="SceneBasic.h" />
     <ClInclude Include="MainLoop.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneBox.h" />
+    <ClInclude Include="SceneDiffuse.h" />
     <ClInclude Include="SceneUni.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="VboTorus.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DrawAble.cpp" />
     <ClCompile Include="Glutils.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainLoop.cpp" />
@@ -168,6 +173,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneBasic.cpp" />
     <ClCompile Include="SceneBox.cpp" />
+    <ClCompile Include="SceneDiffuse.cpp" />
     <ClCompile Include="SceneUni.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -176,6 +182,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="VboTorus.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
