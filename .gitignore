@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+Debug/
+Release/
+*.db
+*.opendb
+*.filters
+ipch/
+.vs/
