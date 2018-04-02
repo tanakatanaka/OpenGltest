@@ -156,6 +156,7 @@
     <ClInclude Include="DrawAble.h" />
     <ClInclude Include="Glutils.h" />
     <ClInclude Include="MainView.h" />
+    <ClInclude Include="SceneAds.h" />
     <ClInclude Include="SceneBasic.h" />
     <ClInclude Include="MainLoop.h" />
     <ClInclude Include="Scene.h" />
@@ -174,6 +175,7 @@
     <ClCompile Include="MainLoop.cpp" />
     <ClCompile Include="MainView.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneAds.cpp" />
     <ClCompile Include="SceneBasic.cpp" />
     <ClCompile Include="SceneBox.cpp" />
     <ClCompile Include="SceneDiffuse.cpp" />

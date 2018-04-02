@@ -31,6 +31,9 @@
     <Filter Include="ソース ファイル\Scene\SceneDiffuse">
       <UniqueIdentifier>{febe8df7-6083-4519-ab53-983356a93f6e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneAds">
+      <UniqueIdentifier>{6b3d04d5-cbce-40c0-9243-6a6a6c8493df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -78,6 +81,9 @@
     <ClInclude Include="Defines.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="SceneAds.h">
+      <Filter>ソース ファイル\Scene\SceneAds</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -118,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="VboTorus.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneAds.cpp">
+      <Filter>ソース ファイル\Scene\SceneAds</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

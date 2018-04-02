@@ -165,6 +165,46 @@ bool Shader::Link()
 	return linked;
 }
 
+bool Shader::IsLinked()
+{
+    return linked;
+}
+
+bool Shader::Validate()
+{
+	if( ! IsLinked() ) 
+	{
+		return false;
+	}
+
+	GLint status;
+	glValidateProgram(handle);
+	glGetProgramiv( handle, GL_VALIDATE_STATUS, &status );
+
+	if(GL_FALSE == status)
+	{
+		// Store log and return false
+        int length = 0;
+        logString = "";
+
+        glGetProgramiv(handle, GL_INFO_LOG_LENGTH, &length );
+
+        if( length > 0 ) 
+		{
+            char * c_log = new char[length];
+            int written = 0;
+            glGetProgramInfoLog(handle, length, &written, c_log);
+            logString = c_log;
+            delete [] c_log;
+        }
+
+        return false;
+    } 
+
+	return true;
+}
+
+
 
 bool Shader::FileExists( const std::string & fileName )
 {
