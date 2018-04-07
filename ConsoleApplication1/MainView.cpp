@@ -3,7 +3,10 @@
 #include "scenebasic.h"
 #include "sceneDiffuse.h"
 #include "sceneAds.h"
+#include "sceneFlat.h"
+#include "sceneTwoside.h"
 #include "sceneUni.h"
+#include "sceneSub.h"
 #include "glutils.h"
 
 #include <iostream>
@@ -13,7 +16,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = new SceneADS();
+	scene = new SceneSub();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

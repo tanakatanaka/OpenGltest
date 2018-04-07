@@ -34,6 +34,15 @@
     <Filter Include="ソース ファイル\Scene\SceneAds">
       <UniqueIdentifier>{6b3d04d5-cbce-40c0-9243-6a6a6c8493df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneSub">
+      <UniqueIdentifier>{dca06d86-5863-4925-9931-6f19a275c949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneTwoside">
+      <UniqueIdentifier>{e21f421b-c18d-4732-a42b-ce606764a760}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneFlat">
+      <UniqueIdentifier>{1ee59a61-4e8a-4aa7-bd92-37cf26863123}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -84,6 +93,24 @@
     <ClInclude Include="SceneAds.h">
       <Filter>ソース ファイル\Scene\SceneAds</Filter>
     </ClInclude>
+    <ClInclude Include="SceneSub.h">
+      <Filter>ソース ファイル\Scene\SceneSub</Filter>
+    </ClInclude>
+    <ClInclude Include="VboTeapot.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="teapotdata.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTwoside.h">
+      <Filter>ソース ファイル\Scene\SceneTwoside</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneFlat.h">
+      <Filter>ソース ファイル\Scene\SceneFlat</Filter>
+    </ClInclude>
+    <ClInclude Include="VBOMesh.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -127,6 +154,21 @@
     </ClCompile>
     <ClCompile Include="SceneAds.cpp">
       <Filter>ソース ファイル\Scene\SceneAds</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSub.cpp">
+      <Filter>ソース ファイル\Scene\SceneSub</Filter>
+    </ClCompile>
+    <ClCompile Include="VboTeapot.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTwoside.cpp">
+      <Filter>ソース ファイル\Scene\SceneTwoside</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneFlat.cpp">
+      <Filter>ソース ファイル\Scene\SceneFlat</Filter>
+    </ClCompile>
+    <ClCompile Include="VBOMesh.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
