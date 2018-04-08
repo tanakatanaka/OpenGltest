@@ -162,7 +162,9 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneBox.h" />
     <ClInclude Include="SceneDiffuse.h" />
+    <ClInclude Include="SceneDiscard.h" />
     <ClInclude Include="SceneFlat.h" />
+    <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneSub.h" />
     <ClInclude Include="SceneTwoside.h" />
     <ClInclude Include="SceneUni.h" />
@@ -171,6 +173,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="teapotdata.h" />
     <ClInclude Include="VBOMesh.h" />
+    <ClInclude Include="VBOPlane.h" />
     <ClInclude Include="VboTeapot.h" />
     <ClInclude Include="VboTorus.h" />
   </ItemGroup>
@@ -185,7 +188,9 @@
     <ClCompile Include="SceneBasic.cpp" />
     <ClCompile Include="SceneBox.cpp" />
     <ClCompile Include="SceneDiffuse.cpp" />
+    <ClCompile Include="SceneDiscard.cpp" />
     <ClCompile Include="SceneFlat.cpp" />
+    <ClCompile Include="SceneMulti.cpp" />
     <ClCompile Include="SceneSub.cpp" />
     <ClCompile Include="SceneTwoside.cpp" />
     <ClCompile Include="SceneUni.cpp" />
@@ -197,6 +202,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="VBOMesh.cpp" />
+    <ClCompile Include="VBOPlane.cpp" />
     <ClCompile Include="VboTeapot.cpp" />
     <ClCompile Include="VboTorus.cpp" />
   </ItemGroup>

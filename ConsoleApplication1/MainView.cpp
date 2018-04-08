@@ -1,10 +1,12 @@
 #include "stdafx.h"
 #include "mainview.h"
 #include "scenebasic.h"
+#include "sceneDiscard.h"
 #include "sceneDiffuse.h"
 #include "sceneAds.h"
 #include "sceneFlat.h"
 #include "sceneTwoside.h"
+#include "sceneMulti.h"
 #include "sceneUni.h"
 #include "sceneSub.h"
 #include "glutils.h"
@@ -16,7 +18,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = new SceneSub();
+	scene = new SceneMulti();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

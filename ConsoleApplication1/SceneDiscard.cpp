@@ -1,21 +1,17 @@
 #include "stdafx.h"
-#include "SceneSub.h"
+#include "scenediscard.h"
 #include <cstdio>
 #include <cstdlib>
-
 #include "glutils.h"
-
 using glm::vec3;
-
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform2.hpp>
 
-
-SceneSub::SceneSub() : angle(0.0f)
+SceneDiscard::SceneDiscard() : angle(0.0f)
 {
 }
 
-void SceneSub::initScene()
+void SceneDiscard::initScene()
 {
     compileAndLinkShader();
 
@@ -23,9 +19,8 @@ void SceneSub::initScene()
     glEnable(GL_DEPTH_TEST);
 
     teapot = new VBOTeapot(13, mat4(1.0f));
-    torus = new VBOTorus(0.7f, 0.3f, 30, 30);
 
-    view = glm::lookAt(vec3(0.0f,0.0f,30.0f), vec3(0.0f,0.0f,0.0f), vec3(0.0f,1.0f,0.0f));
+    view = glm::lookAt(vec3(0.0f,0.0f,20.0f), vec3(0.0f,0.0f,0.0f), vec3(0.0f,-1.0f,0.0f));
     projection = mat4(1.0f);
 
     shader_.setUniform("Material.Kd", 0.9f, 0.5f, 0.3f);
@@ -38,40 +33,27 @@ void SceneSub::initScene()
 
 }
 
-void SceneSub::update( float t )
+void SceneDiscard::update( float t )
 {
     //angle += 1.0f;
     //if( angle > 360.0 ) angle -= 360.0;
 }
 
-void SceneSub::render()
+void SceneDiscard::render()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     vec4 lightPos = vec4(0.0f,0.0f,0.0f,1.0f);
     shader_.setUniform("Light.Position", lightPos );
 
-    GLuint shader_ramHandle = shader_.GetHandle();
-
-    GLuint adsIndex = glGetSubroutineIndex( shader_ramHandle, GL_VERTEX_SHADER, "phongModel" );
-    GLuint diffuseIndex = glGetSubroutineIndex(shader_ramHandle, GL_VERTEX_SHADER, "diffuseOnly");
-
-    glUniformSubroutinesuiv( GL_VERTEX_SHADER, 1, &adsIndex);
     model = mat4(1.0f);
-    model *= glm::translate(vec3(-3.0,-1.5,0.0));
-    model *= glm::rotate(-90.0f, vec3(1.0f,0.0f,0.0f));
-    setMatrices();
-    teapot->render();
-
-    glUniformSubroutinesuiv( GL_VERTEX_SHADER, 1, &diffuseIndex);
-    model = mat4(1.0f);
-    model *= glm::translate(vec3(3.0f, -1.5f, 0.0f));
+    model *= glm::translate(vec3(0.0,-1.5,0.0));
     model *= glm::rotate(-90.0f, vec3(1.0f,0.0f,0.0f));
     setMatrices();
     teapot->render();
 }
 
-void SceneSub::setMatrices()
+void SceneDiscard::setMatrices()
 {
     mat4 mv = view * model;
     shader_.setUniform("ModelViewMatrix", mv);
@@ -80,7 +62,7 @@ void SceneSub::setMatrices()
     shader_.setUniform("MVP", projection * mv);
 }
 
-void SceneSub::resize(int w, int h)
+void SceneDiscard::resize(int w, int h)
 {
     glViewport(0,0,w,h);
     width = w;
@@ -88,16 +70,18 @@ void SceneSub::resize(int w, int h)
     projection = glm::perspective(50.0f, (float)w/h, 0.3f, 100.0f);
 }
 
-void SceneSub::compileAndLinkShader()
+void SceneDiscard::compileAndLinkShader()
 {
-    if( ! shader_.CompileShaderFromFile("../ConsoleApplication1/Shader/subroutine.vert",GLSLShader::VERTEX) )
+    if( ! shader_.CompileShaderFromFile("../ConsoleApplication1/Shader/discard.vert",GLSLShader::VERTEX) )
     {
-        printf("Vertex shader failed to compile!\n%s", shader_.Log().c_str());
+        printf("Vertex shader failed to compile!\n%s",
+               shader_.Log().c_str());
         exit(1);
     }
-    if( ! shader_.CompileShaderFromFile("../ConsoleApplication1/Shader/subroutine.frag",GLSLShader::FRAGMENT))
+    if( ! shader_.CompileShaderFromFile("../ConsoleApplication1/Shader/discard.frag",GLSLShader::FRAGMENT))
     {
-        printf("Fragment shader failed to compile!\n%s", shader_.Log().c_str());
+        printf("Fragment shader failed to compile!\n%s",
+               shader_.Log().c_str());
         exit(1);
     }
     if( ! shader_.Link() )

@@ -61,6 +61,7 @@ int main(int argc, char *args[])
 		SDL_GL_SwapWindow(window);
 		glClearColor(0,0,0,1); 
 		mainView.paintGL();
+		SDL_Delay(16);
 	}
 
     SDL_DestroyWindow(window);

@@ -43,6 +43,12 @@
     <Filter Include="ソース ファイル\Scene\SceneFlat">
       <UniqueIdentifier>{1ee59a61-4e8a-4aa7-bd92-37cf26863123}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneDiscard">
+      <UniqueIdentifier>{abfcdc09-c7d9-46c3-a730-6d4ce522f43e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneMulti">
+      <UniqueIdentifier>{6cefd6d4-cffa-49bb-90b6-8bc97ae7dd2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -111,6 +117,15 @@
     <ClInclude Include="VBOMesh.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="SceneDiscard.h">
+      <Filter>ソース ファイル\Scene\SceneDiscard</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMulti.h">
+      <Filter>ソース ファイル\Scene\SceneMulti</Filter>
+    </ClInclude>
+    <ClInclude Include="VBOPlane.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -168,6 +183,15 @@
       <Filter>ソース ファイル\Scene\SceneFlat</Filter>
     </ClCompile>
     <ClCompile Include="VBOMesh.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDiscard.cpp">
+      <Filter>ソース ファイル\Scene\SceneDiscard</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMulti.cpp">
+      <Filter>ソース ファイル\Scene\SceneMulti</Filter>
+    </ClCompile>
+    <ClCompile Include="VBOPlane.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
   </ItemGroup>
