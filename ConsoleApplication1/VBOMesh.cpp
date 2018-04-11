@@ -12,10 +12,14 @@ using std::endl;
 using std::ifstream;
 #include <sstream>
 using std::istringstream;
+#include "vbomesh.h"
+#include "glutils.h"
 
-VBOMesh::VBOMesh(const char * fileName)
+#define uint unsigned int
+
+VBOMesh::VBOMesh(const char * fileName, bool center)
 {
-    loadOBJ(fileName);
+    loadOBJ(fileName, center);
 }
 
 void VBOMesh::render() const {
@@ -23,7 +27,7 @@ void VBOMesh::render() const {
     glDrawElements(GL_TRIANGLES, 3 * faces, GL_UNSIGNED_INT, ((GLubyte *)NULL + (0)));
 }
 
-void VBOMesh::loadOBJ( const char * fileName ) {
+void VBOMesh::loadOBJ( const char * fileName, bool reCenterMesh ) {
 
     vector <vec3> points;
     vector <vec3> normals;
@@ -91,13 +95,17 @@ void VBOMesh::loadOBJ( const char * fileName ) {
                                 atoi( vertString.substr(slash2 + 1,vertString.length()).c_str() )
                                 - 1;
                     }
-                    if( pIndex == -1 || nIndex == -1 || tcIndex == -1 ) {
-                        printf("Missing some data for vertex\n");
-                    }
-                    else if( !( pIndex == tcIndex && tcIndex == nIndex) ) {
-                        printf("Indexes are not consistent.\n");
+                    if( pIndex == -1 ) {
+                        printf("Missing point index!!!");
                     } else {
                         face.push_back(pIndex);
+                    }
+
+                    if( tcIndex != -1 && pIndex != nIndex ) {
+                        printf("Texture and point indices are not consistent.\n");
+                    }
+                    if ( nIndex != -1 && nIndex != pIndex ) {
+                        printf("Normal and point indices are not consistent.\n");
                     }
                 }
                 if( face.size() != 3 ) {
@@ -114,9 +122,95 @@ void VBOMesh::loadOBJ( const char * fileName ) {
 
     objStream.close();
 
+    if( normals.size() == 0 ) {
+        generateAveragedNormals(points,normals,faces);
+    }
+
+    vector<vec4> tangents;
+    if( texCoords.size() > 0 ) {
+        generateTangents(points,normals,faces,texCoords,tangents);
+    }
+
+    if( reCenterMesh ) {
+        center(points);
+    }
+
+    storeVBO(points, normals, texCoords, tangents, faces);
+
+    cout << "Loaded mesh from: " << fileName << endl;
+    cout << " " << points.size() << " points" << endl;
+    cout << " " << nFaces << " faces" << endl;
+    cout << " " << normals.size() << " normals" << endl;
+    cout << " " << texCoords.size() << " texture coordinates." << endl;
+}
+
+void VBOMesh::center( vector<vec3> & points ) {
+    if( points.size() < 1) return;
+
+    vec3 maxPoint = points[0];
+    vec3 minPoint = points[0];
+
+    // Find the AABB
+    for( uint i = 0; i < points.size(); ++i ) {
+        vec3 & point = points[i];
+        if( point.x > maxPoint.x ) maxPoint.x = point.x;
+        if( point.y > maxPoint.y ) maxPoint.y = point.y;
+        if( point.z > maxPoint.z ) maxPoint.z = point.z;
+        if( point.x < minPoint.x ) minPoint.x = point.x;
+        if( point.y < minPoint.y ) minPoint.y = point.y;
+        if( point.z < minPoint.z ) minPoint.z = point.z;
+    }
+
+    // Center of the AABB
+    vec3 center = vec3( (maxPoint.x + minPoint.x) / 2.0f,
+                        (maxPoint.y + minPoint.y) / 2.0f,
+                        (maxPoint.z + minPoint.z) / 2.0f );
+
+    // Translate center of the AABB to the origin
+    for( uint i = 0; i < points.size(); ++i ) {
+        vec3 & point = points[i];
+        point = point - center;
+    }
+}
+
+void VBOMesh::generateAveragedNormals(
+        const vector<vec3> & points,
+        vector<vec3> & normals,
+        const vector<int> & faces )
+{
+    for( uint i = 0; i < points.size(); i++ ) {
+        normals.push_back(vec3(0.0f));
+    }
+
+    for( uint i = 0; i < faces.size(); i += 3) {
+        const vec3 & p1 = points[faces[i]];
+        const vec3 & p2 = points[faces[i+1]];
+        const vec3 & p3 = points[faces[i+2]];
+
+        vec3 a = p2 - p1;
+        vec3 b = p3 - p1;
+        vec3 n = glm::normalize(glm::cross(a,b));
+
+        normals[faces[i]] += n;
+        normals[faces[i+1]] += n;
+        normals[faces[i+2]] += n;
+    }
+
+    for( uint i = 0; i < normals.size(); i++ ) {
+        normals[i] = glm::normalize(normals[i]);
+    }
+}
+
+void VBOMesh::generateTangents(
+        const vector<vec3> & points,
+        const vector<vec3> & normals,
+        const vector<int> & faces,
+        const vector<vec2> & texCoords,
+        vector<vec4> & tangents)
+{
     vector<vec3> tan1Accum;
     vector<vec3> tan2Accum;
-    vector<vec4> tangents;
+
     for( uint i = 0; i < points.size(); i++ ) {
         tan1Accum.push_back(vec3(0.0f));
         tan2Accum.push_back(vec3(0.0f));
@@ -126,13 +220,13 @@ void VBOMesh::loadOBJ( const char * fileName ) {
     // Compute the tangent vector
     for( uint i = 0; i < faces.size(); i += 3 )
     {
-        vec3 &p1 = points[faces[i]];
-        vec3 &p2 = points[faces[i+1]];
-        vec3 &p3 = points[faces[i+2]];
+        const vec3 &p1 = points[faces[i]];
+        const vec3 &p2 = points[faces[i+1]];
+        const vec3 &p3 = points[faces[i+2]];
 
-        vec2 &tc1 = texCoords[faces[i]];
-        vec2 &tc2 = texCoords[faces[i+1]];
-        vec2 &tc3 = texCoords[faces[i+2]];
+        const vec2 &tc1 = texCoords[faces[i]];
+        const vec2 &tc2 = texCoords[faces[i+1]];
+        const vec2 &tc3 = texCoords[faces[i+2]];
 
         vec3 q1 = p2 - p1;
         vec3 q2 = p3 - p1;
@@ -155,7 +249,7 @@ void VBOMesh::loadOBJ( const char * fileName ) {
 
     for( uint i = 0; i < points.size(); ++i )
     {
-        vec3 &n = normals[i];
+        const vec3 &n = normals[i];
         vec3 &t1 = tan1Accum[i];
         vec3 &t2 = tan2Accum[i];
 
@@ -166,14 +260,6 @@ void VBOMesh::loadOBJ( const char * fileName ) {
     }
     tan1Accum.clear();
     tan2Accum.clear();
-
-    storeVBO(points, normals, texCoords, tangents, faces);
-
-    cout << "Loaded mesh from: " << fileName << endl;
-    cout << " " << points.size() << " points" << endl;
-    cout << " " << nFaces << " faces" << endl;
-    cout << " " << normals.size() << " normals" << endl;
-    cout << " " << texCoords.size() << " texture coordinates." << endl;
 }
 
 void VBOMesh::storeVBO( const vector<vec3> & points,
@@ -187,8 +273,14 @@ void VBOMesh::storeVBO( const vector<vec3> & points,
 
     float * v = new float[3 * nVerts];
     float * n = new float[3 * nVerts];
-    float * tc = new float[ 2 * nVerts];
-    float * tang = new float[4*nVerts];
+    float * tc = NULL;
+    float * tang = NULL;
+
+    if(texCoords.size() > 0 && tangents.size() > 0) {
+        tc = new float[ 2 * nVerts];
+        tang = new float[4*nVerts];
+    }
+
     unsigned int *el = new unsigned int[elements.size()];
 
     int idx = 0, tcIdx = 0, tangIdx = 0;
@@ -201,14 +293,16 @@ void VBOMesh::storeVBO( const vector<vec3> & points,
         n[idx+1] = normals[i].y;
         n[idx+2] = normals[i].z;
         idx += 3;
-        tang[tangIdx] = tangents[i].x;
-        tang[tangIdx+1] = tangents[i].y;
-        tang[tangIdx+2] = tangents[i].z;
-        tang[tangIdx+3] = tangents[i].w;
-        tangIdx += 4;
-        tc[tcIdx] = texCoords[i].x;
-        tc[tcIdx+1] = texCoords[i].y;
-        tcIdx += 2;
+        if( tc != NULL ) {
+            tang[tangIdx] = tangents[i].x;
+            tang[tangIdx+1] = tangents[i].y;
+            tang[tangIdx+2] = tangents[i].z;
+            tang[tangIdx+3] = tangents[i].w;
+            tangIdx += 4;
+            tc[tcIdx] = texCoords[i].x;
+            tc[tcIdx+1] = texCoords[i].y;
+            tcIdx += 2;
+        }
     }
     for( unsigned int i = 0; i < elements.size(); ++i )
     {
@@ -217,8 +311,15 @@ void VBOMesh::storeVBO( const vector<vec3> & points,
     glGenVertexArrays( 1, &vaoHandle );
     glBindVertexArray(vaoHandle);
 
+    int nBuffers = 5;
+    GLuint elementBuffer = 4;
+    if( tc == NULL ) {
+        nBuffers = 3;
+        elementBuffer = 2;
+    }
+
     unsigned int handle[5];
-    glGenBuffers(5, handle);
+    glGenBuffers(nBuffers, handle);
 
     glBindBuffer(GL_ARRAY_BUFFER, handle[0]);
     glBufferData(GL_ARRAY_BUFFER, (3 * nVerts) * sizeof(float), v, GL_STATIC_DRAW);
@@ -230,24 +331,28 @@ void VBOMesh::storeVBO( const vector<vec3> & points,
     glVertexAttribPointer( (GLuint)1, 3, GL_FLOAT, GL_FALSE, 0, ((GLubyte *)NULL + (0)) );
     glEnableVertexAttribArray(1);  // Vertex normal
 
-    glBindBuffer(GL_ARRAY_BUFFER, handle[2]);
-    glBufferData(GL_ARRAY_BUFFER, (2 * nVerts) * sizeof(float), tc, GL_STATIC_DRAW);
-    glVertexAttribPointer( (GLuint)2, 2, GL_FLOAT, GL_FALSE, 0, ((GLubyte *)NULL + (0)) );
-    glEnableVertexAttribArray(2);  // Texture coords
+    if( tc != NULL ) {
+        glBindBuffer(GL_ARRAY_BUFFER, handle[2]);
+        glBufferData(GL_ARRAY_BUFFER, (2 * nVerts) * sizeof(float), tc, GL_STATIC_DRAW);
+        glVertexAttribPointer( (GLuint)2, 2, GL_FLOAT, GL_FALSE, 0, ((GLubyte *)NULL + (0)) );
+        glEnableVertexAttribArray(2);  // Texture coords
 
-    glBindBuffer(GL_ARRAY_BUFFER, handle[3]);
-    glBufferData(GL_ARRAY_BUFFER, (4 * nVerts) * sizeof(float), tang, GL_STATIC_DRAW);
-    glVertexAttribPointer( (GLuint)3, 4, GL_FLOAT, GL_FALSE, 0, ((GLubyte *)NULL + (0)) );
-    glEnableVertexAttribArray(3);  // Tangent vector
+        glBindBuffer(GL_ARRAY_BUFFER, handle[3]);
+        glBufferData(GL_ARRAY_BUFFER, (4 * nVerts) * sizeof(float), tang, GL_STATIC_DRAW);
+        glVertexAttribPointer( (GLuint)3, 4, GL_FLOAT, GL_FALSE, 0, ((GLubyte *)NULL + (0)) );
+        glEnableVertexAttribArray(3);  // Tangent vector
+    }
 
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, handle[4]);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, handle[elementBuffer]);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3 * faces * sizeof(unsigned int), el, GL_STATIC_DRAW);
 
     delete [] v;
     delete [] n;
-    delete [] tc;
+    if( tc != NULL ) {
+        delete [] tc;
+        delete [] tang;
+    }
     delete [] el;
-    delete [] tang;
 }
 
 void VBOMesh::trimString( string & str ) {
@@ -258,3 +363,4 @@ void VBOMesh::trimString( string & str ) {
     location = str.find_last_not_of(whiteSpace);
     str.erase(location + 1);
 }
+

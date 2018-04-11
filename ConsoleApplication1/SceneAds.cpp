@@ -75,13 +75,13 @@ void SceneADS::resize(int w, int h)
 
 void SceneADS::compileAndLinkShader()
 {
-    if( ! shader_.CompileShaderFromFile("../ConsoleApplication1/Shader/function.vert",GLSLShader::VERTEX) )
+    if( ! shader_.CompileShaderFromFile("../ConsoleApplication1/Shader/phong.vert",GLSLShader::VERTEX) )
     {
         printf("Vertex shader failed to compile!\n%s",
                shader_.Log().c_str());
         exit(1);
     }
-    if( ! shader_.CompileShaderFromFile("../ConsoleApplication1/Shader/function.frag",GLSLShader::FRAGMENT))
+    if( ! shader_.CompileShaderFromFile("../ConsoleApplication1/Shader/phong.frag",GLSLShader::FRAGMENT))
     {
         printf("Fragment shader failed to compile!\n%s",
                shader_.Log().c_str());

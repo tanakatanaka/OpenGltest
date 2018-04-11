@@ -49,6 +49,12 @@
     <Filter Include="ソース ファイル\Scene\SceneMulti">
       <UniqueIdentifier>{6cefd6d4-cffa-49bb-90b6-8bc97ae7dd2a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneDirectional">
+      <UniqueIdentifier>{125ce0d3-2efd-47be-88ce-41bb69268063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneFragment">
+      <UniqueIdentifier>{d835ee8b-c0a2-41ea-9600-f08792855569}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -126,6 +132,12 @@
     <ClInclude Include="VBOPlane.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="SceneDirectional.h">
+      <Filter>ソース ファイル\Scene\SceneDirectional</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneFragment.h">
+      <Filter>ソース ファイル\Scene\SceneFragment</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -193,6 +205,12 @@
     </ClCompile>
     <ClCompile Include="VBOPlane.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDirectional.cpp">
+      <Filter>ソース ファイル\Scene\SceneDirectional</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneFragment.cpp">
+      <Filter>ソース ファイル\Scene\SceneFragment</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

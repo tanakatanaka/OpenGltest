@@ -22,10 +22,10 @@ void SceneMulti::initScene()
     glEnable(GL_DEPTH_TEST);
 
     plane = new VBOPlane(10.0f, 10.0f, 100, 100);
-    mesh = new VBOMesh("../ConsoleApplication1/Media/pig_triangulated.obj");
+    mesh = new VBOMesh("../ConsoleApplication1/Media/pig_triangulated.obj", true);
 
    // model *= glm::rotate(35.0f, vec3(0.0f,1.0f,0.0f));
-    view = glm::lookAt(vec3(0.5f,0.75f,0.75f), vec3(0.0f,0.0f,0.0f), vec3(0.0f,1.0f,0.0f));
+    view = glm::lookAt(vec3(0.5f,2.0f,0.75f), vec3(0.0f,0.0f,0.0f), vec3(0.0f,1.0f,0.0f));
     projection = mat4(1.0f);
 
     char name[20];

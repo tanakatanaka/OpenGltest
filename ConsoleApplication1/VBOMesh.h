@@ -24,10 +24,23 @@ private:
                             const vector<vec2> &texCoords,
                             const vector<vec4> &tangents,
                             const vector<int> &elements );
+
+	 void generateAveragedNormals(
+            const vector<vec3> & points,
+            vector<vec3> & normals,
+            const vector<int> & faces );
+    void generateTangents(
+            const vector<vec3> & points,
+            const vector<vec3> & normals,
+            const vector<int> & faces,
+            const vector<vec2> & texCoords,
+            vector<vec4> & tangents);
+    void center(vector<vec3> &);
+
 public:
-    VBOMesh( const char * fileName );
+    VBOMesh( const char * fileName, bool reCenterMesh = false );
 
     void render() const;
 
-    void loadOBJ( const char * fileName );
+    void loadOBJ( const char * fileName, bool );
 };

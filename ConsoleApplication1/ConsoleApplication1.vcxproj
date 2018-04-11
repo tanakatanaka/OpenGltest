@@ -162,8 +162,10 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneBox.h" />
     <ClInclude Include="SceneDiffuse.h" />
+    <ClInclude Include="SceneDirectional.h" />
     <ClInclude Include="SceneDiscard.h" />
     <ClInclude Include="SceneFlat.h" />
+    <ClInclude Include="SceneFragment.h" />
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneSub.h" />
     <ClInclude Include="SceneTwoside.h" />
@@ -188,8 +190,10 @@
     <ClCompile Include="SceneBasic.cpp" />
     <ClCompile Include="SceneBox.cpp" />
     <ClCompile Include="SceneDiffuse.cpp" />
+    <ClCompile Include="SceneDirectional.cpp" />
     <ClCompile Include="SceneDiscard.cpp" />
     <ClCompile Include="SceneFlat.cpp" />
+    <ClCompile Include="SceneFragment.cpp" />
     <ClCompile Include="SceneMulti.cpp" />
     <ClCompile Include="SceneSub.cpp" />
     <ClCompile Include="SceneTwoside.cpp" />
