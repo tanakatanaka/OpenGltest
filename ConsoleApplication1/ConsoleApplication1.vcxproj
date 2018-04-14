@@ -165,9 +165,12 @@
     <ClInclude Include="SceneDirectional.h" />
     <ClInclude Include="SceneDiscard.h" />
     <ClInclude Include="SceneFlat.h" />
+    <ClInclude Include="SceneFog.h" />
     <ClInclude Include="SceneFragment.h" />
     <ClInclude Include="SceneMulti.h" />
+    <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
+    <ClInclude Include="SceneToon.h" />
     <ClInclude Include="SceneTwoside.h" />
     <ClInclude Include="SceneUni.h" />
     <ClInclude Include="Shader.h" />
@@ -193,9 +196,12 @@
     <ClCompile Include="SceneDirectional.cpp" />
     <ClCompile Include="SceneDiscard.cpp" />
     <ClCompile Include="SceneFlat.cpp" />
+    <ClCompile Include="SceneFog.cpp" />
     <ClCompile Include="SceneFragment.cpp" />
     <ClCompile Include="SceneMulti.cpp" />
+    <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
+    <ClCompile Include="SceneToon.cpp" />
     <ClCompile Include="SceneTwoside.cpp" />
     <ClCompile Include="SceneUni.cpp" />
     <ClCompile Include="Shader.cpp" />

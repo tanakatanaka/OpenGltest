@@ -55,6 +55,15 @@
     <Filter Include="ソース ファイル\Scene\SceneFragment">
       <UniqueIdentifier>{d835ee8b-c0a2-41ea-9600-f08792855569}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneSpotl">
+      <UniqueIdentifier>{7c3b7e72-6c2b-4661-8701-4ca480e40726}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneToon">
+      <UniqueIdentifier>{0e4bf016-9a3e-4a43-bd2b-74e182929655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneFog">
+      <UniqueIdentifier>{4d7ff87a-b497-4b72-812f-57b33c2b1f01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -138,6 +147,15 @@
     <ClInclude Include="SceneFragment.h">
       <Filter>ソース ファイル\Scene\SceneFragment</Filter>
     </ClInclude>
+    <ClInclude Include="SceneSpot.h">
+      <Filter>ソース ファイル\Scene\SceneSpotl</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneToon.h">
+      <Filter>ソース ファイル\Scene\SceneToon</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneFog.h">
+      <Filter>ソース ファイル\Scene\SceneFog</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -211,6 +229,15 @@
     </ClCompile>
     <ClCompile Include="SceneFragment.cpp">
       <Filter>ソース ファイル\Scene\SceneFragment</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneToon.cpp">
+      <Filter>ソース ファイル\Scene\SceneToon</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSpot.cpp">
+      <Filter>ソース ファイル\Scene\SceneSpotl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneFog.cpp">
+      <Filter>ソース ファイル\Scene\SceneFog</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
