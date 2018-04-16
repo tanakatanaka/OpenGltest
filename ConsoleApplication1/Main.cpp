@@ -7,11 +7,22 @@
 #include "SDL_opengl.h"
 
 #include "mainview.h"
+#include <memory>
+#include <functional>
+
+struct Quit
+{
+	~Quit()
+	{
+		SDL_Quit();
+	}
+};
 
 int main(int argc, char *args[])
 {
-	SDL_Window *window;
-    SDL_Event event;
+	Quit quit;
+	auto window = std::unique_ptr<SDL_Window, std::function<void(SDL_Window*)>>(nullptr, SDL_DestroyWindow);
+	SDL_Event event;
 
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
@@ -25,24 +36,26 @@ int main(int argc, char *args[])
 	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 	
 	SDL_Init(SDL_INIT_VIDEO);
-	window = SDL_CreateWindow("SDL2/OpenGL Demo", 200, 200, 640, 480, SDL_WINDOW_OPENGL);
+	window.reset(SDL_CreateWindow("SDL2/OpenGL Demo", 200, 200, 640, 480, SDL_WINDOW_OPENGL));
 
 	if (window == NULL) 
 	{
-    SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "ウィンドウとレンダラーを生成できなかった: %s", SDL_GetError());
-    return 3;
+	SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "ウィンドウとレンダラーを生成できなかった: %s", SDL_GetError());
+	return 3;
 	}
 
-	SDL_GLContext glcontext = SDL_GL_CreateContext(window);
+	auto glcontext = std::unique_ptr<void, std::function<void(SDL_GLContext)>>(nullptr, SDL_GL_DeleteContext);
+	glcontext.reset(SDL_GL_CreateContext(window.get()));
 	MainLoop mainLoop;
 	MainView mainView;
-	
-	const char*msg = SDL_GetError();
+
+		const char *msg = SDL_GetError();
 	printf(msg);
 
 	mainLoop.InitGlew();
 	mainView.InitializeGL();
 	mainView.resizeGL(640, 480);
+	glClearColor(0, 0, 0, 1);
 
 	while (1)
 	{
@@ -50,23 +63,20 @@ int main(int argc, char *args[])
 		{
 			if (event.type == SDL_QUIT)
 			{
-				break;
+				return 0;
 			}
 			if (event.type == SDL_WINDOWEVENT &&
 				(event.window.event == SDL_WINDOWEVENT_RESIZED))
 			{
 				mainView.resizeGL(event.window.data1, event.window.data2);
 			}
+
 		}
-		SDL_GL_SwapWindow(window);
-		glClearColor(0,0,0,1); 
+		SDL_GL_SwapWindow(window.get());
 		mainView.paintGL();
 		SDL_Delay(16);
 	}
 
-    SDL_DestroyWindow(window);
-
-    SDL_Quit();
-    return 0;
+	return 0;
 }
 
