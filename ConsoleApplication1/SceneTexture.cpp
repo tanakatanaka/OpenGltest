@@ -127,7 +127,7 @@ void SceneTexture::compileAndLinkShader()
                prog.Log().c_str());
         exit(1);
     }
-    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/texture.vs",GLSLShader::FRAGMENT))
+    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/texture.fs",GLSLShader::FRAGMENT))
     {
         printf("Fragment shader failed to compile!\n%s",
                prog.Log().c_str());
