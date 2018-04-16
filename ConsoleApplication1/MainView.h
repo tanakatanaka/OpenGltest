@@ -1,13 +1,14 @@
 #pragma once
 #include "stdafx.h"
 #include <glew.h>
+#include <memory>
 #include "scene.h"
 
 class MainView
 {
 private:
 
-    Scene *scene;
+    std::unique_ptr<Scene> scene;
 
 public:
     void InitializeGL();

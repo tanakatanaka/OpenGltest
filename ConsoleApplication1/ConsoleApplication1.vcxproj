@@ -95,7 +95,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glew32s.lib;glut32.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;glut32.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -170,6 +170,7 @@
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
+    <ClInclude Include="SceneTexture.h" />
     <ClInclude Include="SceneToon.h" />
     <ClInclude Include="SceneTwoside.h" />
     <ClInclude Include="SceneUni.h" />
@@ -177,6 +178,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="teapotdata.h" />
+    <ClInclude Include="VBOCube.h" />
     <ClInclude Include="VBOMesh.h" />
     <ClInclude Include="VBOPlane.h" />
     <ClInclude Include="VboTeapot.h" />
@@ -201,6 +203,7 @@
     <ClCompile Include="SceneMulti.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
+    <ClCompile Include="SceneTexture.cpp" />
     <ClCompile Include="SceneToon.cpp" />
     <ClCompile Include="SceneTwoside.cpp" />
     <ClCompile Include="SceneUni.cpp" />
@@ -211,6 +214,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="VBOCube.cpp" />
     <ClCompile Include="VBOMesh.cpp" />
     <ClCompile Include="VBOPlane.cpp" />
     <ClCompile Include="VboTeapot.cpp" />

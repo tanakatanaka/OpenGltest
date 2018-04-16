@@ -64,6 +64,9 @@
     <Filter Include="ソース ファイル\Scene\SceneFog">
       <UniqueIdentifier>{4d7ff87a-b497-4b72-812f-57b33c2b1f01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneTexture">
+      <UniqueIdentifier>{a73ee8f5-beea-4a70-b7de-c65fb7cde881}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -156,6 +159,12 @@
     <ClInclude Include="SceneFog.h">
       <Filter>ソース ファイル\Scene\SceneFog</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTexture.h">
+      <Filter>ソース ファイル\Scene\SceneTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="VBOCube.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -238,6 +247,12 @@
     </ClCompile>
     <ClCompile Include="SceneFog.cpp">
       <Filter>ソース ファイル\Scene\SceneFog</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTexture.cpp">
+      <Filter>ソース ファイル\Scene\SceneTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="VBOCube.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
