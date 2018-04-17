@@ -37,7 +37,7 @@ void  MainView::InitializeGL()
 
 void MainView::paintGL() 
 {
-	//scene->update(0.0f);
+	scene->update(0.0f);
     GLUtils::checkForOpenGLError(__FILE__,__LINE__);
 	scene->render();
 }

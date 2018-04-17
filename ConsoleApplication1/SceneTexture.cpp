@@ -54,7 +54,7 @@ void SceneTexture::initScene()
 
     cube = new VBOCube();
 
-    view = glm::lookAt(vec3(1.0f,1.25f,1.25f), vec3(0.0f,0.0f,0.0f), vec3(0.0f,1.0f,0.0f));
+    view = glm::lookAt(vec3(-2.0f,-2.25f,-2.25f), vec3(0.0f,0.0f,0.0f), vec3(0.0f,1.0f,0.0f));
     projection = mat4(1.0f);
 
     angle = 0.0;
@@ -91,10 +91,10 @@ void SceneTexture::render()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    prog.setUniform("Light.Position", vec4(0.0f,0.0f,0.0f,1.0f) );
+    prog.setUniform("Light.Position", vec4(0.0f,0.0f,1.0f,1.0f) );
     prog.setUniform("Material.Kd", 0.9f, 0.9f, 0.9f);
     prog.setUniform("Material.Ks", 0.95f, 0.95f, 0.95f);
-    prog.setUniform("Material.Ka", 0.1f, 0.1f, 0.1f);
+    prog.setUniform("Material.Ka", 0.3f, 0.3f, 0.3f);
     prog.setUniform("Material.Shininess", 100.0f);
 
     model = mat4(1.0f);
@@ -116,7 +116,7 @@ void SceneTexture::resize(int w, int h)
     glViewport(0,0,w,h);
     width = w;
     height = h;
-    projection = glm::perspective(60.0f, (float)w/h, 0.3f, 100.0f);
+    projection = glm::perspective(100.0f, (float)w/h, 0.3f, 100.0f);
 }
 
 void SceneTexture::compileAndLinkShader()
