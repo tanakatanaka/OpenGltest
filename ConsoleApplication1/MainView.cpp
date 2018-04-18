@@ -1,13 +1,14 @@
 #include "stdafx.h"
 #include "mainview.h"
+#include "scenemultitex.h"
+
+
+/*
 #include "scenespot.h"
 #include "sceneAds.h"
 #include "sceneToon.h"
 #include"sceneFog.h"
 #include"sceneTexture.h"
-
-
-/*
 #include "scenebasic.h"
 #include "sceneDiscard.h"
 #include "sceneDiffuse.h"
@@ -29,7 +30,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneTexture());
+	scene.reset(new SceneMultiTex());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

@@ -168,6 +168,7 @@
     <ClInclude Include="SceneFog.h" />
     <ClInclude Include="SceneFragment.h" />
     <ClInclude Include="SceneMulti.h" />
+    <ClInclude Include="SceneMultitex.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
     <ClInclude Include="SceneTexture.h" />
@@ -201,6 +202,7 @@
     <ClCompile Include="SceneFog.cpp" />
     <ClCompile Include="SceneFragment.cpp" />
     <ClCompile Include="SceneMulti.cpp" />
+    <ClCompile Include="SceneMultitex.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
     <ClCompile Include="SceneTexture.cpp" />

@@ -88,7 +88,7 @@ void SceneToon::resize(int w, int h)
     glViewport(0,0,w,h);
     width = w;
     height = h;
-    projection = glm::perspective(60.0f, (float)w/h, 0.3f, 100.0f);
+    projection = glm::perspective(40.0f, (float)w/h, 0.3f, 100.0f);
 }
 
 void SceneToon::compileAndLinkShader()

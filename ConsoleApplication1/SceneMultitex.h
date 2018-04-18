@@ -1,14 +1,12 @@
-#pragma once
-
 #include "scene.h"
 #include "shader.h"
 #include "vboplane.h"
 #include "vbocube.h"
-
+#include "defines.h"
 #include <glm/glm.hpp>
 using glm::mat4;
 
-class SceneTexture : public Scene
+class SceneMultiTex : public Scene
 {
 private:
     Shader prog;
@@ -26,12 +24,10 @@ private:
     void compileAndLinkShader();
 
 public:
-    SceneTexture();
+    SceneMultiTex();
 
     void initScene();
     void update( float t );
     void render();
-    void resize(int, int); 
-	//static SDL_Surface *convert_to_opengl_format(SDL_Surface *s);
+    void resize(int, int);
 };
-

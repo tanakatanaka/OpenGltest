@@ -67,6 +67,9 @@
     <Filter Include="ソース ファイル\Scene\SceneTexture">
       <UniqueIdentifier>{a73ee8f5-beea-4a70-b7de-c65fb7cde881}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneMultiTex">
+      <UniqueIdentifier>{06d4013d-bc65-4ed0-9881-b492fdd6a9d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -165,6 +168,9 @@
     <ClInclude Include="VBOCube.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="SceneMultitex.h">
+      <Filter>ソース ファイル\Scene\SceneMultiTex</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -253,6 +259,9 @@
     </ClCompile>
     <ClCompile Include="VBOCube.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMultitex.cpp">
+      <Filter>ソース ファイル\Scene\SceneMultiTex</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
