@@ -70,6 +70,12 @@
     <Filter Include="ソース ファイル\Scene\SceneMultiTex">
       <UniqueIdentifier>{06d4013d-bc65-4ed0-9881-b492fdd6a9d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneAlpha">
+      <UniqueIdentifier>{eb36a158-422d-4f9b-9e52-8d09962ae3d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneNormalMap">
+      <UniqueIdentifier>{e37ad548-7220-4b7c-bbb2-bd94c40daf6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -171,6 +177,12 @@
     <ClInclude Include="SceneMultitex.h">
       <Filter>ソース ファイル\Scene\SceneMultiTex</Filter>
     </ClInclude>
+    <ClInclude Include="SceneAlpha.h">
+      <Filter>ソース ファイル\Scene\SceneAlpha</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneNormalMap.h">
+      <Filter>ソース ファイル\Scene\SceneNormalMap</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -262,6 +274,12 @@
     </ClCompile>
     <ClCompile Include="SceneMultitex.cpp">
       <Filter>ソース ファイル\Scene\SceneMultiTex</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneAlpha.cpp">
+      <Filter>ソース ファイル\Scene\SceneAlpha</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneNormalMap.cpp">
+      <Filter>ソース ファイル\Scene\SceneNormalMap</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

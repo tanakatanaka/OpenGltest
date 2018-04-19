@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "mainview.h"
 #include "scenemultitex.h"
-
+#include "scenealpha.h"
 
 /*
 #include "scenespot.h"
@@ -20,6 +20,7 @@
 #include "sceneSub.h"
 #include "scenedirectional.h"
 */
+#include "scenenormalmap.h"
 #include "scenefragment.h"
 #include "glutils.h"
 
@@ -30,7 +31,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneMultiTex());
+	scene.reset(new SceneNormalMap());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

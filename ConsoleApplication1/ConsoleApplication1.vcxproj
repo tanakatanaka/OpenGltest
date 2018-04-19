@@ -157,6 +157,7 @@
     <ClInclude Include="Glutils.h" />
     <ClInclude Include="MainView.h" />
     <ClInclude Include="SceneAds.h" />
+    <ClInclude Include="SceneAlpha.h" />
     <ClInclude Include="SceneBasic.h" />
     <ClInclude Include="MainLoop.h" />
     <ClInclude Include="Scene.h" />
@@ -169,6 +170,7 @@
     <ClInclude Include="SceneFragment.h" />
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneMultitex.h" />
+    <ClInclude Include="SceneNormalMap.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
     <ClInclude Include="SceneTexture.h" />
@@ -193,6 +195,7 @@
     <ClCompile Include="MainView.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneAds.cpp" />
+    <ClCompile Include="SceneAlpha.cpp" />
     <ClCompile Include="SceneBasic.cpp" />
     <ClCompile Include="SceneBox.cpp" />
     <ClCompile Include="SceneDiffuse.cpp" />
@@ -203,6 +206,7 @@
     <ClCompile Include="SceneFragment.cpp" />
     <ClCompile Include="SceneMulti.cpp" />
     <ClCompile Include="SceneMultitex.cpp" />
+    <ClCompile Include="SceneNormalMap.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
     <ClCompile Include="SceneTexture.cpp" />
