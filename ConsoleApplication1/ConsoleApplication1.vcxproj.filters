@@ -76,6 +76,12 @@
     <Filter Include="ソース ファイル\Scene\SceneNormalMap">
       <UniqueIdentifier>{e37ad548-7220-4b7c-bbb2-bd94c40daf6e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneRefractCube">
+      <UniqueIdentifier>{a92184ad-ebd3-47bf-a218-99ef8bf34ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneReflect">
+      <UniqueIdentifier>{1a5aa80c-b2fb-499e-9f24-c4d92ed71939}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -183,6 +189,15 @@
     <ClInclude Include="SceneNormalMap.h">
       <Filter>ソース ファイル\Scene\SceneNormalMap</Filter>
     </ClInclude>
+    <ClInclude Include="SceneRefractCube.h">
+      <Filter>ソース ファイル\Scene\SceneRefractCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Skybox.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneReflectCube.cpp">
+      <Filter>ソース ファイル\Scene\SceneReflect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -280,6 +295,15 @@
     </ClCompile>
     <ClCompile Include="SceneNormalMap.cpp">
       <Filter>ソース ファイル\Scene\SceneNormalMap</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRefractCube.cpp">
+      <Filter>ソース ファイル\Scene\SceneRefractCube</Filter>
+    </ClCompile>
+    <ClCompile Include="Skybox.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneReflectCube.h">
+      <Filter>ソース ファイル\Scene\SceneReflect</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

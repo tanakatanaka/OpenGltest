@@ -2,6 +2,8 @@
 #include "mainview.h"
 #include "scenemultitex.h"
 #include "scenealpha.h"
+//#include "scenerefractcube.h"
+#include"scenereflectcube.h"
 
 /*
 #include "scenespot.h"
@@ -31,7 +33,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneNormalMap());
+	scene.reset(new SceneReflectCube());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

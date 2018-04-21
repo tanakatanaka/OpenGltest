@@ -171,6 +171,8 @@
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneMultitex.h" />
     <ClInclude Include="SceneNormalMap.h" />
+    <ClInclude Include="SceneReflectCube.cpp" />
+    <ClInclude Include="SceneRefractCube.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
     <ClInclude Include="SceneTexture.h" />
@@ -178,6 +180,7 @@
     <ClInclude Include="SceneTwoside.h" />
     <ClInclude Include="SceneUni.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Skybox.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="teapotdata.h" />
@@ -207,6 +210,8 @@
     <ClCompile Include="SceneMulti.cpp" />
     <ClCompile Include="SceneMultitex.cpp" />
     <ClCompile Include="SceneNormalMap.cpp" />
+    <ClCompile Include="SceneReflectCube.h" />
+    <ClCompile Include="SceneRefractCube.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
     <ClCompile Include="SceneTexture.cpp" />
@@ -214,6 +219,7 @@
     <ClCompile Include="SceneTwoside.cpp" />
     <ClCompile Include="SceneUni.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Skybox.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
