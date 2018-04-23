@@ -125,6 +125,12 @@ void SceneReflectCube::update( float t )
 {
     angle += 0.0001f;
     if( angle > TWOPI) angle -= TWOPI;
+
+	auto state = SDL_GetKeyboardState(nullptr);
+	if (state[SDL_SCANCODE_LEFT]) { angle -= 1; }
+	if (state[SDL_SCANCODE_RIGHT]) { angle += 1; }
+	if (state[SDL_SCANCODE_UP]) { angle += 1; }
+	if (state[SDL_SCANCODE_DOWN]) { angle += 1; }
 }
 
 void SceneReflectCube::render()
