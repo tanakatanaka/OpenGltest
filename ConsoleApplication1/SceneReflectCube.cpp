@@ -1,17 +1,17 @@
 #include "stdafx.h"
-#include"SceneReflectCube.h"
+#include "SceneReflectCube.h"
 #include <cstdio>
 #include <cstdlib>
-
-
 #include <SDL_image.h>
+#include <iostream>
 #include "glutils.h"
 #include "defines.h"
 
-using glm::vec3;
-
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform2.hpp>
+using std::cout;
+using std::endl;
+using glm::vec3;
 
 static SDL_Surface * convert_to_opengl_format(SDL_Surface *s)
 {
@@ -63,14 +63,14 @@ void SceneReflectCube::initScene()
 
    // prog.setUniform("Light.Intensity", vec3(0.9f,0.9f,0.9f) );
 
-    loadCubeMap("texture/debevec/stpeters_cross");
+    loadCubeMap("../texture/debevec/stpeters_cross");
 
     // Load moss texture file
-    const char * texName = "../Texture/debevec/stpeters_cross_negz.png";
-	SDL_Surface *hoge = IMG_Load(texName);
-	auto img = convert_to_opengl_format(hoge);
+    const char * texName = "../Texture/debevec/stpeters_cross_negz.jpg";
+    SDL_Surface *hoge = IMG_Load(texName);
+    auto img = convert_to_opengl_format(hoge);
     
-	//QImage img = QGLWidget::convertToGLFormat(QImage(texName,"PNG"));
+    //QImage img = QGLWidget::convertToGLFormat(QImage(texName,"PNG"));
     GLuint texID;
     glGenTextures(1,&texID);
     // Copy moss texture to OpenGL
@@ -100,14 +100,14 @@ void SceneReflectCube::loadCubeMap( const char * baseFileName )
     };
 
     for( int i = 0; i < 6; i++ ) 
-	{
-        string texName = string(baseFileName) + "_" + suffixes[i] + ".png";
+    {
+        string texName = string(baseFileName) + "_" + suffixes[i] + ".jpg";
         cout << "Loading: " << texName << endl;
-		//QImage img = QGLWidget::convertToGLFormat(QImage(texName.c_str(),"PNG"));
+        //QImage img = QGLWidget::convertToGLFormat(QImage(texName.c_str(),"PNG"));
 
-		SDL_Surface *hoge = IMG_Load(texName.c_str());
-		auto img = convert_to_opengl_format(hoge);
-		glTexImage2D(targets[i], 0, GL_RGBA, img->w, img->h,
+        SDL_Surface *hoge = IMG_Load(texName.c_str());
+        auto img = convert_to_opengl_format(hoge);
+        glTexImage2D(targets[i], 0, GL_RGBA, img->w, img->h,
                      0, GL_RGBA, GL_UNSIGNED_BYTE, img->pixels);
     }
 

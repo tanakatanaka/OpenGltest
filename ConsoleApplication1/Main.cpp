@@ -36,7 +36,7 @@ int main(int argc, char *args[])
 	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 	
 	SDL_Init(SDL_INIT_VIDEO);
-	window.reset(SDL_CreateWindow("SDL2/OpenGL Demo", 200, 200, 640, 480, SDL_WINDOW_OPENGL));
+	window.reset(SDL_CreateWindow("SDL2/OpenGL Demo", 200, 200, 640, 480, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE));
 
 	if (window == NULL) 
 	{
