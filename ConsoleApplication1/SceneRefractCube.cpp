@@ -62,7 +62,7 @@ void SceneRefractCube::initScene()
 
     angle = (float)( TO_RADIANS(90.0) );
 
-    loadCubeMap("../Texture/stpeters_cross");
+    loadCubeMap("../texture/debevec/stpeters_cross");
 }
 
 void SceneRefractCube::loadCubeMap( const char * baseFileName )
@@ -80,8 +80,9 @@ void SceneRefractCube::loadCubeMap( const char * baseFileName )
         GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z
     };
 
-    for( int i = 0; i < 6; i++ ) {
-        string texName = string(baseFileName) + "_" + suffixes[i] + ".png";
+    for( int i = 0; i < 6; i++ ) 
+	{
+        string texName = string(baseFileName) + "_" + suffixes[i] + ".jpg";
         cout << "Loading: " << texName << endl;
 
 		SDL_Surface *hoge = IMG_Load(texName.c_str());
@@ -104,8 +105,14 @@ void SceneRefractCube::loadCubeMap( const char * baseFileName )
 
 void SceneRefractCube::update( float t )
 {
-    angle += 0.0001f;
+    angle += 0.001f;
     if( angle > TWOPI) angle -= TWOPI;
+
+	auto state = SDL_GetKeyboardState(nullptr);
+	if (state[SDL_SCANCODE_LEFT]) { angle -= 0.05; }
+	if (state[SDL_SCANCODE_RIGHT]) { angle += 0.05; }
+	if (state[SDL_SCANCODE_UP]) { angle += 0.05; }
+	if (state[SDL_SCANCODE_DOWN]) { angle += 0.05; }
 }
 
 void SceneRefractCube::render()
@@ -113,7 +120,7 @@ void SceneRefractCube::render()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     vec3 cameraPos = vec3( 7.0f * cos(angle), 2.0f, 7.0f * sin(angle));
-    view = glm::lookAt(cameraPos, vec3(0.0f,0.0f,0.0f), vec3(0.0f,1.0f,0.0f));
+    view = glm::lookAt(cameraPos, vec3(0.0f,0.0f,0.0f), vec3(0.0f,-1.0f,0.0f));
     prog.setUniform("WorldCameraPosition", cameraPos);
     //view = glm::lookAt(vec3(0.0f,2.0f,0.0f), vec3(0.0f,0.0f,0.0f), vec3(0.0f,0.0f,1.0f));
 
@@ -148,7 +155,7 @@ void SceneRefractCube::resize(int w, int h)
     glViewport(0,0,w,h);
     width = w;
     height = h;
-    projection = glm::perspective(50.0f, (float)w/h, 0.3f, 100.0f);
+    projection = glm::perspective(200.0f, (float)w/h, 0.3f, 100.0f);
     //float c = 2.0f;
     //projection = glm::ortho( -0.4f * c, 0.4f * c, -0.3f * c, 0.3f * c, 0.1f, 100.0f);
 }

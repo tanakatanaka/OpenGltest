@@ -123,14 +123,14 @@ void SceneReflectCube::loadCubeMap( const char * baseFileName )
 
 void SceneReflectCube::update( float t )
 {
-    angle += 0.0001f;
+    angle += 0.001f;
     if( angle > TWOPI) angle -= TWOPI;
 
 	auto state = SDL_GetKeyboardState(nullptr);
-	if (state[SDL_SCANCODE_LEFT]) { angle -= 1; }
-	if (state[SDL_SCANCODE_RIGHT]) { angle += 1; }
-	if (state[SDL_SCANCODE_UP]) { angle += 1; }
-	if (state[SDL_SCANCODE_DOWN]) { angle += 1; }
+	if (state[SDL_SCANCODE_LEFT]) { angle -= 0.05; }
+	if (state[SDL_SCANCODE_RIGHT]) { angle += 0.05; }
+	if (state[SDL_SCANCODE_UP]) { angle += 0.05; }
+	if (state[SDL_SCANCODE_DOWN]) { angle += 0.05; }
 }
 
 void SceneReflectCube::render()
@@ -138,7 +138,7 @@ void SceneReflectCube::render()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     vec3 cameraPos = vec3( 7.0f * cos(angle), 2.0f, 7.0f * sin(angle));
-    view = glm::lookAt(cameraPos, vec3(0.0f,0.0f,0.0f), vec3(0.0f,1.0f,0.0f));
+    view = glm::lookAt(cameraPos, vec3(0.0f,0.0f,0.0f), vec3(0.0f,-1.0f,0.0f));
     prog.setUniform("WorldCameraPosition", cameraPos);
     //view = glm::lookAt(vec3(0.0f,2.0f,0.0f), vec3(0.0f,0.0f,0.0f), vec3(0.0f,0.0f,1.0f));
 
@@ -175,7 +175,7 @@ void SceneReflectCube::resize(int w, int h)
     glViewport(0,0,w,h);
     width = w;
     height = h;
-    projection = glm::perspective(50.0f, (float)w/h, 0.3f, 100.0f);
+    projection = glm::perspective(200.0f, (float)w/h, 0.3f, 100.0f);
     //float c = 2.0f;
     //projection = glm::ortho( -0.4f * c, 0.4f * c, -0.3f * c, 0.3f * c, 0.1f, 100.0f);
 }

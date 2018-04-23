@@ -195,7 +195,7 @@
     <ClInclude Include="Skybox.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
-    <ClInclude Include="SceneReflectCube.cpp">
+    <ClInclude Include="SceneReflectCube.h">
       <Filter>ソース ファイル\Scene\SceneReflect</Filter>
     </ClInclude>
   </ItemGroup>
@@ -302,7 +302,7 @@
     <ClCompile Include="Skybox.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
-    <ClCompile Include="SceneReflectCube.h">
+    <ClCompile Include="SceneReflectCube.cpp">
       <Filter>ソース ファイル\Scene\SceneReflect</Filter>
     </ClCompile>
   </ItemGroup>
