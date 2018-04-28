@@ -165,12 +165,14 @@
     <ClInclude Include="SceneDiffuse.h" />
     <ClInclude Include="SceneDirectional.h" />
     <ClInclude Include="SceneDiscard.h" />
+    <ClInclude Include="SceneEdge.h" />
     <ClInclude Include="SceneFlat.h" />
     <ClInclude Include="SceneFog.h" />
     <ClInclude Include="SceneFragment.h" />
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneMultitex.h" />
     <ClInclude Include="SceneNormalMap.h" />
+    <ClCompile Include="SceneEdge.cpp" />
     <ClCompile Include="SceneProjTex.cpp" />
     <ClCompile Include="SceneReflectCube.cpp" />
     <ClInclude Include="SceneProjTex.h" />

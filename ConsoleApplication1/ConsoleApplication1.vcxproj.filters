@@ -88,6 +88,9 @@
     <Filter Include="ソース ファイル\Scene\SceneRendertoTex">
       <UniqueIdentifier>{209be7d4-6d68-4810-88e0-703961e03cc0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneEdge">
+      <UniqueIdentifier>{c239788a-5865-4630-82ea-a9b4629df99d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -210,6 +213,9 @@
     <ClInclude Include="SceneRendertoTex.h">
       <Filter>ソース ファイル\Scene\SceneRendertoTex</Filter>
     </ClInclude>
+    <ClInclude Include="SceneEdge.h">
+      <Filter>ソース ファイル\Scene\SceneEdge</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -322,6 +328,9 @@
     </ClCompile>
     <ClCompile Include="SceneRendertoTex.cpp">
       <Filter>ソース ファイル\Scene\SceneRendertoTex</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneEdge.cpp">
+      <Filter>ソース ファイル\Scene\SceneEdge</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
