@@ -82,6 +82,12 @@
     <Filter Include="ソース ファイル\Scene\SceneReflect">
       <UniqueIdentifier>{1a5aa80c-b2fb-499e-9f24-c4d92ed71939}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneProjTex">
+      <UniqueIdentifier>{3caf3568-cf76-4267-a500-59560cf40aa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneRendertoTex">
+      <UniqueIdentifier>{209be7d4-6d68-4810-88e0-703961e03cc0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -198,6 +204,12 @@
     <ClInclude Include="SceneReflectCube.h">
       <Filter>ソース ファイル\Scene\SceneReflect</Filter>
     </ClInclude>
+    <ClInclude Include="SceneProjTex.h">
+      <Filter>ソース ファイル\Scene\SceneProjTex</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRendertoTex.h">
+      <Filter>ソース ファイル\Scene\SceneRendertoTex</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -304,6 +316,12 @@
     </ClCompile>
     <ClCompile Include="SceneReflectCube.cpp">
       <Filter>ソース ファイル\Scene\SceneReflect</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneProjTex.cpp">
+      <Filter>ソース ファイル\Scene\SceneProjTex</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRendertoTex.cpp">
+      <Filter>ソース ファイル\Scene\SceneRendertoTex</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

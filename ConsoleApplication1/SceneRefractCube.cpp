@@ -162,13 +162,13 @@ void SceneRefractCube::resize(int w, int h)
 
 void SceneRefractCube::compileAndLinkShader()
 {
-    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/cubemap_refract.vs",GLSLShader::VERTEX) )
+    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/ibl.vs",GLSLShader::VERTEX) )
     {
         printf("Vertex shader failed to compile!\n%s",
                prog.Log().c_str());
         exit(1);
     }
-    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/cubemap_refract.fs",GLSLShader::FRAGMENT))
+    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/ibl.fs",GLSLShader::FRAGMENT))
     {
         printf("Fragment shader failed to compile!\n%s",
                prog.Log().c_str());

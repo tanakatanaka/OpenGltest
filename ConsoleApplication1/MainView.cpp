@@ -1,11 +1,13 @@
 #include "stdafx.h"
 #include "mainview.h"
+#include "scenerendertotex.h"
+
+/*
 #include "scenemultitex.h"
 #include "scenealpha.h"
 #include "scenerefractcube.h"
 #include"scenereflectcube.h"
-
-/*
+#include "sceneprojtex.h"
 #include "scenespot.h"
 #include "sceneAds.h"
 #include "sceneToon.h"
@@ -33,7 +35,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneRefractCube());
+	scene.reset(new SceneRenderToTex());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

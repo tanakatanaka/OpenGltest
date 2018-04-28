@@ -171,8 +171,11 @@
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneMultitex.h" />
     <ClInclude Include="SceneNormalMap.h" />
+    <ClCompile Include="SceneProjTex.cpp" />
     <ClCompile Include="SceneReflectCube.cpp" />
+    <ClInclude Include="SceneProjTex.h" />
     <ClInclude Include="SceneRefractCube.h" />
+    <ClInclude Include="SceneRendertoTex.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
     <ClInclude Include="SceneTexture.h" />
@@ -212,6 +215,7 @@
     <ClCompile Include="SceneNormalMap.cpp" />
     <ClInclude Include="SceneReflectCube.h" />
     <ClCompile Include="SceneRefractCube.cpp" />
+    <ClCompile Include="SceneRendertoTex.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
     <ClCompile Include="SceneTexture.cpp" />
