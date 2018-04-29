@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "mainview.h"
+#include "sceneblur.h"
 #include "sceneedge.h"
 //#include "scenerendertotex.h"
 
@@ -37,7 +38,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneEdge());
+	scene.reset(new SceneBlur());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

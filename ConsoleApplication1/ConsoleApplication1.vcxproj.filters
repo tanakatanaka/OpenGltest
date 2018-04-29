@@ -91,6 +91,9 @@
     <Filter Include="ソース ファイル\Scene\SceneEdge">
       <UniqueIdentifier>{c239788a-5865-4630-82ea-a9b4629df99d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneBlur">
+      <UniqueIdentifier>{14e03328-d06b-4536-b6ec-cd7af8c12662}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -216,6 +219,9 @@
     <ClInclude Include="SceneEdge.h">
       <Filter>ソース ファイル\Scene\SceneEdge</Filter>
     </ClInclude>
+    <ClInclude Include="SceneBlur.h">
+      <Filter>ソース ファイル\Scene\SceneBlur</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -331,6 +337,9 @@
     </ClCompile>
     <ClCompile Include="SceneEdge.cpp">
       <Filter>ソース ファイル\Scene\SceneEdge</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneBlur.cpp">
+      <Filter>ソース ファイル\Scene\SceneBlur</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

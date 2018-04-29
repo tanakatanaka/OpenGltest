@@ -55,7 +55,7 @@ int main(int argc, char *args[])
 	mainLoop.InitGlew();
 	mainView.InitializeGL();
 	mainView.resizeGL(640, 480);
-	glClearColor(1, 0, 0, 1);
+	glClearColor(0, 0, 0, 1);
 
 	while (1)
 	{
