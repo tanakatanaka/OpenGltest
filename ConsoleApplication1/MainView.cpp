@@ -2,6 +2,7 @@
 #include "mainview.h"
 #include "sceneblur.h"
 #include "sceneedge.h"
+#include "scenebloom.h"
 //#include "scenerendertotex.h"
 
 
@@ -38,7 +39,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneBlur());
+	scene.reset(new SceneBloom());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

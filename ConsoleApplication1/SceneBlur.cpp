@@ -1,21 +1,21 @@
 #include "stdafx.h"
-#include "sceneedge.h"
+#include "sceneblur.h"
 #include <cstdio>
-#include <cstdlib>s
+#include <cstdlib>
 #include "glutils.h"
 #include "defines.h"
-
 using glm::vec3;
+
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform2.hpp>
 
-SceneEdge::SceneEdge()
+SceneBlur::SceneBlur()
 {
     width = 640;
     height = 480;
 }
 
-void SceneEdge::initScene()
+void SceneBlur::initScene()
 {
     compileAndLinkShader();
 
@@ -74,23 +74,39 @@ void SceneEdge::initScene()
     GLuint programHandle = prog.GetHandle();
     pass1Index = glGetSubroutineIndex( programHandle, GL_FRAGMENT_SHADER, "pass1");
     pass2Index = glGetSubroutineIndex( programHandle, GL_FRAGMENT_SHADER, "pass2");
+    pass3Index = glGetSubroutineIndex( programHandle, GL_FRAGMENT_SHADER, "pass3");
 
     prog.setUniform("Width", 640);
     prog.setUniform("Height", 480);
-    prog.setUniform("EdgeThreshold", 0.1f);
-    prog.setUniform("RenderTex", 0);
+    prog.setUniform("Texture0", 0);
     prog.setUniform("Light.Intensity", vec3(1.0f,1.0f,1.0f) );
+
+    char uniName[20];
+    float weights[5], sum, sigma2 = 8.0f;
+
+    // Compute and sum the weights
+    weights[0] = gauss(0,sigma2);
+    sum = weights[0];
+    for( int i = 1; i < 5; i++ ) {
+        weights[i] = gauss(i, sigma2);
+        sum += 2 * weights[i];
+    }
+
+    // Normalize the weights and set the uniform
+    for( int i = 0; i < 5; i++ ) {
+        snprintf(uniName, 20, "Weight[%d]", i);
+        float val = weights[i] / sum;
+        prog.setUniform(uniName, val);
+    }
 }
 
-void SceneEdge::setupFBO() {
+void SceneBlur::setupFBO() {
     // Generate and bind the framebuffer
-    glGenFramebuffers(1, &fboHandle);
-    glBindFramebuffer(GL_FRAMEBUFFER, fboHandle);
+    glGenFramebuffers(1, &renderFBO);
+    glBindFramebuffer(GL_FRAMEBUFFER, renderFBO);
 
     // Create the texture object
-    GLuint renderTex;
     glGenTextures(1, &renderTex);
-    glActiveTexture(GL_TEXTURE0);  // Use texture unit 0
     glBindTexture(GL_TEXTURE_2D, renderTex);
     glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,width,height,0,GL_RGBA,GL_UNSIGNED_BYTE,NULL);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -115,25 +131,49 @@ void SceneEdge::setupFBO() {
 
     // Unbind the framebuffer, and revert to default framebuffer
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+    // Generate and bind the framebuffer
+    glGenFramebuffers(1, &intermediateFBO);
+    glBindFramebuffer(GL_FRAMEBUFFER, intermediateFBO);
+
+    // Create the texture object
+    glGenTextures(1, &intermediateTex);
+    glActiveTexture(GL_TEXTURE0);  // Use texture unit 0
+    glBindTexture(GL_TEXTURE_2D, intermediateTex);
+    glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,width,height,0,GL_RGBA,GL_UNSIGNED_BYTE,NULL);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+    // Bind the texture to the FBO
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, intermediateTex, 0);
+
+    // No depth buffer needed for this FBO
+
+    // Set the targets for the fragment output variables
+    glDrawBuffers(1, drawBuffers);
+
+    // Unbind the framebuffer, and revert to default framebuffer
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void SceneEdge::update( float t )
+void SceneBlur::update( float t )
 {
     angle += 0.001f;
     if( angle > TWOPI) angle -= TWOPI;
 }
 
-void SceneEdge::render()
+void SceneBlur::render()
 {
     pass1();
     pass2();
+    pass3();
 }
 
-void SceneEdge::pass1()
+void SceneBlur::pass1()
 {
-    glBindFramebuffer(GL_FRAMEBUFFER, fboHandle);
+    glBindFramebuffer(GL_FRAMEBUFFER, renderFBO);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+    glEnable(GL_DEPTH_TEST);
     glUniformSubroutinesuiv( GL_FRAGMENT_SHADER, 1, &pass1Index);
 
     view = glm::lookAt(vec3(7.0f * cos(angle),4.0f,7.0f * sin(angle)), vec3(0.0f,0.0f,0.0f), vec3(0.0f,-1.0f,0.0f));
@@ -172,10 +212,15 @@ void SceneEdge::pass1()
     torus->render();
 }
 
-void SceneEdge::pass2()
+void SceneBlur::pass2()
 {
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glBindFramebuffer(GL_FRAMEBUFFER, intermediateFBO);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, renderTex);
+    glDisable(GL_DEPTH_TEST);
+
+    glClear(GL_COLOR_BUFFER_BIT);
 
     glUniformSubroutinesuiv( GL_FRAGMENT_SHADER, 1, &pass2Index);
     model = mat4(1.0f);
@@ -188,7 +233,27 @@ void SceneEdge::pass2()
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
-void SceneEdge::setMatrices()
+void SceneBlur::pass3()
+{
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, intermediateTex);
+
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glUniformSubroutinesuiv( GL_FRAGMENT_SHADER, 1, &pass3Index);
+    model = mat4(1.0f);
+    view = mat4(1.0f);
+    projection = mat4(1.0f);
+    setMatrices();
+
+    // Render the full-screen quad
+    glBindVertexArray(fsQuad);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+}
+
+void SceneBlur::setMatrices()
 {
     mat4 mv = view * model;
     prog.setUniform("ModelViewMatrix", mv);
@@ -197,7 +262,7 @@ void SceneEdge::setMatrices()
     prog.setUniform("MVP", projection * mv);
 }
 
-void SceneEdge::resize(int w, int h)
+void SceneBlur::resize(int w, int h)
 {
     glViewport(0,0,w,h);
     width = w;
@@ -205,15 +270,15 @@ void SceneEdge::resize(int w, int h)
     projection = glm::perspective(45.0f, (float)w/h, 0.3f, 100.0f);
 }
 
-void SceneEdge::compileAndLinkShader()
+void SceneBlur::compileAndLinkShader()
 {
-    if( ! prog.CompileShaderFromFile("shader/edge.vs",GLSLShader::VERTEX) )
+    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/blur.vs",GLSLShader::VERTEX) )
     {
         printf("Vertex shader failed to compile!\n%s",
                prog.Log().c_str());
         exit(1);
     }
-    if( ! prog.CompileShaderFromFile("shader/edge.fs",GLSLShader::FRAGMENT))
+    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/blur.fs",GLSLShader::FRAGMENT))
     {
         printf("Fragment shader failed to compile!\n%s",
                prog.Log().c_str());
@@ -227,4 +292,11 @@ void SceneEdge::compileAndLinkShader()
     }
 
     prog.Use();
+}
+
+float SceneBlur::gauss(float x, float sigma2 )
+{
+    double coeff = 1.0 / (2.0 * PI * sigma2);
+    double expon = -(x*x) / (2.0 * sigma2);
+    return (float) (coeff*exp(expon));
 }

@@ -94,6 +94,9 @@
     <Filter Include="ソース ファイル\Scene\SceneBlur">
       <UniqueIdentifier>{14e03328-d06b-4536-b6ec-cd7af8c12662}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneBloom">
+      <UniqueIdentifier>{472034bb-4707-4846-9c49-dec4687d4f35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -222,6 +225,9 @@
     <ClInclude Include="SceneBlur.h">
       <Filter>ソース ファイル\Scene\SceneBlur</Filter>
     </ClInclude>
+    <ClInclude Include="SceneBloom.h">
+      <Filter>ソース ファイル\Scene\SceneBloom</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -340,6 +346,9 @@
     </ClCompile>
     <ClCompile Include="SceneBlur.cpp">
       <Filter>ソース ファイル\Scene\SceneBlur</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneBloom.cpp">
+      <Filter>ソース ファイル\Scene\SceneBloom</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
