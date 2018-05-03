@@ -106,6 +106,12 @@
     <Filter Include="ソース ファイル\Scene\SceneDeferred">
       <UniqueIdentifier>{2e23f377-6686-436d-a7ee-8c83ff97ceb3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\ScenePointSprite">
+      <UniqueIdentifier>{f00420f1-094c-421a-a5b1-aebdb0de8ea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneShadeWire">
+      <UniqueIdentifier>{e38b195c-4a73-417e-8f86-35bc0b634737}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -246,6 +252,12 @@
     <ClInclude Include="SceneDeferred.h">
       <Filter>ソース ファイル\Scene\SceneDeferred</Filter>
     </ClInclude>
+    <ClInclude Include="ScenePointSprite.h">
+      <Filter>ソース ファイル\Scene\ScenePointSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneShadeWire.h">
+      <Filter>ソース ファイル\Scene\SceneShadeWire</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -376,6 +388,12 @@
     </ClCompile>
     <ClCompile Include="SceneDeferred.cpp">
       <Filter>ソース ファイル\Scene\SceneDeferred</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePointSprite.cpp">
+      <Filter>ソース ファイル\Scene\ScenePointSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneShadeWire.cpp">
+      <Filter>ソース ファイル\Scene\SceneShadeWire</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

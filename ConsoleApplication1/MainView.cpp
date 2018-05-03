@@ -6,7 +6,8 @@
 //#include "scenerendertotex.h"
 #include "scenegamma.h"
 #include "scenemsaa.h"
-
+#include "scenepointsprite.h"
+#include "sceneshadewire.h"
 /*
 #include "scenemultitex.h"
 #include "scenealpha.h"
@@ -41,7 +42,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneDeferred());
+	scene.reset(new SceneShadeWire());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

@@ -183,11 +183,14 @@
     <ClCompile Include="SceneEdge.cpp" />
     <ClCompile Include="SceneGamma.cpp" />
     <ClCompile Include="SceneMsaa.cpp" />
+    <ClCompile Include="ScenePointSprite.cpp" />
     <ClCompile Include="SceneProjTex.cpp" />
     <ClCompile Include="SceneReflectCube.cpp" />
+    <ClInclude Include="ScenePointSprite.h" />
     <ClInclude Include="SceneProjTex.h" />
     <ClInclude Include="SceneRefractCube.h" />
     <ClInclude Include="SceneRendertoTex.h" />
+    <ClInclude Include="SceneShadeWire.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
     <ClInclude Include="SceneTexture.h" />
@@ -228,6 +231,7 @@
     <ClInclude Include="SceneReflectCube.h" />
     <ClCompile Include="SceneRefractCube.cpp" />
     <ClCompile Include="SceneRendertoTex.cpp" />
+    <ClCompile Include="SceneShadeWire.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
     <ClCompile Include="SceneTexture.cpp" />
