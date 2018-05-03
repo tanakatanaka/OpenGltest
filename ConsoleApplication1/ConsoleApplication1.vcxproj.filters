@@ -97,6 +97,15 @@
     <Filter Include="ソース ファイル\Scene\SceneBloom">
       <UniqueIdentifier>{472034bb-4707-4846-9c49-dec4687d4f35}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneGamma">
+      <UniqueIdentifier>{3e0b44cc-7948-4941-87ca-81479a7bc3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneMsaa">
+      <UniqueIdentifier>{6db1b03c-436c-495b-96da-476f6d28f35a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneDeferred">
+      <UniqueIdentifier>{2e23f377-6686-436d-a7ee-8c83ff97ceb3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -228,6 +237,15 @@
     <ClInclude Include="SceneBloom.h">
       <Filter>ソース ファイル\Scene\SceneBloom</Filter>
     </ClInclude>
+    <ClInclude Include="SceneGamma.h">
+      <Filter>ソース ファイル\Scene\SceneGamma</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMsaa.h">
+      <Filter>ソース ファイル\Scene\SceneMsaa</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDeferred.h">
+      <Filter>ソース ファイル\Scene\SceneDeferred</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -349,6 +367,15 @@
     </ClCompile>
     <ClCompile Include="SceneBloom.cpp">
       <Filter>ソース ファイル\Scene\SceneBloom</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGamma.cpp">
+      <Filter>ソース ファイル\Scene\SceneGamma</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMsaa.cpp">
+      <Filter>ソース ファイル\Scene\SceneMsaa</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDeferred.cpp">
+      <Filter>ソース ファイル\Scene\SceneDeferred</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

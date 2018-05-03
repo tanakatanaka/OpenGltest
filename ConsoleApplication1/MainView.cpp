@@ -4,7 +4,8 @@
 #include "sceneedge.h"
 #include "scenebloom.h"
 //#include "scenerendertotex.h"
-
+#include "scenegamma.h"
+#include "scenemsaa.h"
 
 /*
 #include "scenemultitex.h"
@@ -28,6 +29,7 @@
 #include "sceneSub.h"
 #include "scenedirectional.h"
 */
+#include "scenedeferred.h"
 #include "scenenormalmap.h"
 #include "scenefragment.h"
 #include "glutils.h"
@@ -39,7 +41,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneBloom());
+	scene.reset(new SceneDeferred());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
