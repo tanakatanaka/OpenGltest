@@ -112,6 +112,9 @@
     <Filter Include="ソース ファイル\Scene\SceneShadeWire">
       <UniqueIdentifier>{e38b195c-4a73-417e-8f86-35bc0b634737}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneSilhouette">
+      <UniqueIdentifier>{dbcea2bc-afb1-4312-be2e-62e4ba4f5dda}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -258,6 +261,12 @@
     <ClInclude Include="SceneShadeWire.h">
       <Filter>ソース ファイル\Scene\SceneShadeWire</Filter>
     </ClInclude>
+    <ClInclude Include="SceneSilhouette.h">
+      <Filter>ソース ファイル\Scene\SceneSilhouette</Filter>
+    </ClInclude>
+    <ClInclude Include="VBOMeshAdj.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -394,6 +403,12 @@
     </ClCompile>
     <ClCompile Include="SceneShadeWire.cpp">
       <Filter>ソース ファイル\Scene\SceneShadeWire</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSilhouette.cpp">
+      <Filter>ソース ファイル\Scene\SceneSilhouette</Filter>
+    </ClCompile>
+    <ClCompile Include="VBOMeshAdj.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

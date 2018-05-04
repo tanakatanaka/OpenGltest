@@ -191,6 +191,7 @@
     <ClInclude Include="SceneRefractCube.h" />
     <ClInclude Include="SceneRendertoTex.h" />
     <ClInclude Include="SceneShadeWire.h" />
+    <ClInclude Include="SceneSilhouette.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
     <ClInclude Include="SceneTexture.h" />
@@ -204,6 +205,7 @@
     <ClInclude Include="teapotdata.h" />
     <ClInclude Include="VBOCube.h" />
     <ClInclude Include="VBOMesh.h" />
+    <ClInclude Include="VBOMeshAdj.h" />
     <ClInclude Include="VBOPlane.h" />
     <ClInclude Include="VboTeapot.h" />
     <ClInclude Include="VboTorus.h" />
@@ -232,6 +234,7 @@
     <ClCompile Include="SceneRefractCube.cpp" />
     <ClCompile Include="SceneRendertoTex.cpp" />
     <ClCompile Include="SceneShadeWire.cpp" />
+    <ClCompile Include="SceneSilhouette.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
     <ClCompile Include="SceneTexture.cpp" />
@@ -248,6 +251,7 @@
     </ClCompile>
     <ClCompile Include="VBOCube.cpp" />
     <ClCompile Include="VBOMesh.cpp" />
+    <ClCompile Include="VBOMeshAdj.cpp" />
     <ClCompile Include="VBOPlane.cpp" />
     <ClCompile Include="VboTeapot.cpp" />
     <ClCompile Include="VboTorus.cpp" />

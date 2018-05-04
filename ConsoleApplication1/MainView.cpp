@@ -30,6 +30,7 @@
 #include "sceneSub.h"
 #include "scenedirectional.h"
 */
+#include "scenesilhouette.h"
 #include "scenedeferred.h"
 #include "scenenormalmap.h"
 #include "scenefragment.h"
@@ -42,7 +43,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneShadeWire());
+	scene.reset(new SceneSilhouette());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
