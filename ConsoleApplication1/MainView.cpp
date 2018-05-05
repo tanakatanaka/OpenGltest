@@ -1,13 +1,18 @@
 #include "stdafx.h"
 #include "mainview.h"
+#include "scenequadtess.h"
+/*
 #include "sceneblur.h"
 #include "sceneedge.h"
 #include "scenebloom.h"
-//#include "scenerendertotex.h"
+#include "scenerendertotex.h"
 #include "scenegamma.h"
 #include "scenemsaa.h"
 #include "scenepointsprite.h"
 #include "sceneshadewire.h"
+
+#include "scenebezcurve.h"
+*/
 /*
 #include "scenemultitex.h"
 #include "scenealpha.h"
@@ -29,11 +34,12 @@
 #include "sceneUni.h"
 #include "sceneSub.h"
 #include "scenedirectional.h"
-*/
+
 #include "scenesilhouette.h"
 #include "scenedeferred.h"
 #include "scenenormalmap.h"
-#include "scenefragment.h"
+#include "scenefragment.h"Å@
+*/
 #include "glutils.h"
 
 #include <iostream>
@@ -43,7 +49,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneSilhouette());
+	scene.reset(new SceneQuadTess());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

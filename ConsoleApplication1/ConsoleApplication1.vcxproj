@@ -161,6 +161,7 @@
     <ClInclude Include="SceneBasic.h" />
     <ClInclude Include="MainLoop.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneBezCurve.h" />
     <ClInclude Include="SceneBloom.h" />
     <ClInclude Include="SceneBlur.h" />
     <ClInclude Include="SceneBox.h" />
@@ -177,6 +178,7 @@
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneMultitex.h" />
     <ClInclude Include="SceneNormalMap.h" />
+    <ClCompile Include="SceneBezCurve.cpp" />
     <ClCompile Include="SceneBloom.cpp" />
     <ClCompile Include="SceneBlur.cpp" />
     <ClCompile Include="SceneDeferred.cpp" />
@@ -185,9 +187,11 @@
     <ClCompile Include="SceneMsaa.cpp" />
     <ClCompile Include="ScenePointSprite.cpp" />
     <ClCompile Include="SceneProjTex.cpp" />
+    <ClCompile Include="SceneQuadTess.cpp" />
     <ClCompile Include="SceneReflectCube.cpp" />
     <ClInclude Include="ScenePointSprite.h" />
     <ClInclude Include="SceneProjTex.h" />
+    <ClInclude Include="SceneQuadTess.h" />
     <ClInclude Include="SceneRefractCube.h" />
     <ClInclude Include="SceneRendertoTex.h" />
     <ClInclude Include="SceneShadeWire.h" />

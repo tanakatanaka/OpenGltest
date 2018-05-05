@@ -115,6 +115,12 @@
     <Filter Include="ソース ファイル\Scene\SceneSilhouette">
       <UniqueIdentifier>{dbcea2bc-afb1-4312-be2e-62e4ba4f5dda}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneBezCurve">
+      <UniqueIdentifier>{34a18443-3d0e-4075-894d-62b2c4e8da7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneQuadTess">
+      <UniqueIdentifier>{c9add6d1-505e-4091-964c-73c4f06ba47d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -267,6 +273,12 @@
     <ClInclude Include="VBOMeshAdj.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="SceneBezCurve.h">
+      <Filter>ソース ファイル\Scene\SceneBezCurve</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneQuadTess.h">
+      <Filter>ソース ファイル\Scene\SceneQuadTess</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -409,6 +421,12 @@
     </ClCompile>
     <ClCompile Include="VBOMeshAdj.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneBezCurve.cpp">
+      <Filter>ソース ファイル\Scene\SceneBezCurve</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneQuadTess.cpp">
+      <Filter>ソース ファイル\Scene\SceneQuadTess</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
