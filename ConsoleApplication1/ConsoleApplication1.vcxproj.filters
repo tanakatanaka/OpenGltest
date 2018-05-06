@@ -121,6 +121,12 @@
     <Filter Include="ソース ファイル\Scene\SceneQuadTess">
       <UniqueIdentifier>{c9add6d1-505e-4091-964c-73c4f06ba47d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneTessTeapotDepth">
+      <UniqueIdentifier>{e63b4d47-5075-4605-8198-0caf75b7c3d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneTessTeapot">
+      <UniqueIdentifier>{90039ee9-bf60-42bd-9aa8-f4062af60ade}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -279,6 +285,15 @@
     <ClInclude Include="SceneQuadTess.h">
       <Filter>ソース ファイル\Scene\SceneQuadTess</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTessTeapotDepth.h">
+      <Filter>ソース ファイル\Scene\SceneTessTeapotDepth</Filter>
+    </ClInclude>
+    <ClInclude Include="VBOTeapotPatch.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTessTeapot.h">
+      <Filter>ソース ファイル\Scene\SceneTessTeapot</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -427,6 +442,15 @@
     </ClCompile>
     <ClCompile Include="SceneQuadTess.cpp">
       <Filter>ソース ファイル\Scene\SceneQuadTess</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTessTeapotDepth.cpp">
+      <Filter>ソース ファイル\Scene\SceneTessTeapotDepth</Filter>
+    </ClCompile>
+    <ClCompile Include="VBOTeapotPatch.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTessTeapot.cpp">
+      <Filter>ソース ファイル\Scene\SceneTessTeapot</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

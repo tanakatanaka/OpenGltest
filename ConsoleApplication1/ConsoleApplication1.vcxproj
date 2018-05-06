@@ -198,6 +198,8 @@
     <ClInclude Include="SceneSilhouette.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
+    <ClInclude Include="SceneTessTeapot.h" />
+    <ClInclude Include="SceneTessTeapotDepth.h" />
     <ClInclude Include="SceneTexture.h" />
     <ClInclude Include="SceneToon.h" />
     <ClInclude Include="SceneTwoside.h" />
@@ -212,6 +214,7 @@
     <ClInclude Include="VBOMeshAdj.h" />
     <ClInclude Include="VBOPlane.h" />
     <ClInclude Include="VboTeapot.h" />
+    <ClInclude Include="VBOTeapotPatch.h" />
     <ClInclude Include="VboTorus.h" />
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +244,8 @@
     <ClCompile Include="SceneSilhouette.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
+    <ClCompile Include="SceneTessTeapot.cpp" />
+    <ClCompile Include="SceneTessTeapotDepth.cpp" />
     <ClCompile Include="SceneTexture.cpp" />
     <ClCompile Include="SceneToon.cpp" />
     <ClCompile Include="SceneTwoside.cpp" />
@@ -258,6 +263,7 @@
     <ClCompile Include="VBOMeshAdj.cpp" />
     <ClCompile Include="VBOPlane.cpp" />
     <ClCompile Include="VboTeapot.cpp" />
+    <ClCompile Include="VBOTeapotPatch.cpp" />
     <ClCompile Include="VboTorus.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

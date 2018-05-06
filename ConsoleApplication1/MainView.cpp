@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "mainview.h"
 #include "scenequadtess.h"
+#include "scenetessteapot.h"
 /*
 #include "sceneblur.h"
 #include "sceneedge.h"
@@ -49,7 +50,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneQuadTess());
+	scene.reset(new SceneTessTeapot());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
