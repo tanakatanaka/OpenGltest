@@ -127,6 +127,9 @@
     <Filter Include="ソース ファイル\Scene\SceneTessTeapot">
       <UniqueIdentifier>{90039ee9-bf60-42bd-9aa8-f4062af60ade}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneShadowMap">
+      <UniqueIdentifier>{bf9bf9cf-06fe-4089-b0f1-791ad2fae4ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -294,6 +297,12 @@
     <ClInclude Include="SceneTessTeapot.h">
       <Filter>ソース ファイル\Scene\SceneTessTeapot</Filter>
     </ClInclude>
+    <ClInclude Include="SceneShadowMap.h">
+      <Filter>ソース ファイル\Scene\SceneShadowMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -451,6 +460,12 @@
     </ClCompile>
     <ClCompile Include="SceneTessTeapot.cpp">
       <Filter>ソース ファイル\Scene\SceneTessTeapot</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneShadowMap.cpp">
+      <Filter>ソース ファイル\Scene\SceneShadowMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Frustum.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

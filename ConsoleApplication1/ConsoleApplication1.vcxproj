@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="Defines.h" />
     <ClInclude Include="DrawAble.h" />
+    <ClInclude Include="Frustum.h" />
     <ClInclude Include="Glutils.h" />
     <ClInclude Include="MainView.h" />
     <ClInclude Include="SceneAds.h" />
@@ -181,6 +182,7 @@
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneMultitex.h" />
     <ClInclude Include="SceneNormalMap.h" />
+    <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="SceneBezCurve.cpp" />
     <ClCompile Include="SceneBloom.cpp" />
     <ClCompile Include="SceneBlur.cpp" />
@@ -198,6 +200,7 @@
     <ClInclude Include="SceneRefractCube.h" />
     <ClInclude Include="SceneRendertoTex.h" />
     <ClInclude Include="SceneShadeWire.h" />
+    <ClInclude Include="SceneShadowMap.h" />
     <ClInclude Include="SceneSilhouette.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
@@ -244,6 +247,7 @@
     <ClCompile Include="SceneRefractCube.cpp" />
     <ClCompile Include="SceneRendertoTex.cpp" />
     <ClCompile Include="SceneShadeWire.cpp" />
+    <ClCompile Include="SceneShadowMap.cpp" />
     <ClCompile Include="SceneSilhouette.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
