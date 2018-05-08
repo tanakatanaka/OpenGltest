@@ -30,7 +30,8 @@ void SceneSilhouette::initScene()
 
     glEnable(GL_DEPTH_TEST);
 
-    ogre = new VBOMeshAdj("../ConsoleApplication1/Mesh/bs_ears.obj");
+    // ogre = new VBOMeshAdj("../ConsoleApplication1/Media/pig_triangulated.obj");
+	ogre = new VBOMeshAdj("../ConsoleApplication1/Media/bs_ears.obj");
 
     angle = PI / 2.0;    
 
@@ -65,8 +66,6 @@ void SceneSilhouette::render()
     model = mat4(1.0f);
     setMatrices();
     ogre->render();
-
-    glFinish();
 }
 
 void SceneSilhouette::setMatrices()
@@ -83,7 +82,7 @@ void SceneSilhouette::resize(int w, int h)
     glViewport(0,0,w,h);
     width = w;
     height = h;
-    projection = glm::perspective(60.0f, (float)w/h, 0.3f, 100.0f);
+    projection = glm::perspective(20.0f, (float)w/h, 0.3f, 100.0f);
 }
 
 void SceneSilhouette::compileAndLinkShader()

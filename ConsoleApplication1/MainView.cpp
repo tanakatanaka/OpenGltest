@@ -2,7 +2,6 @@
 #include "mainview.h"
 #include "scenequadtess.h"
 #include "scenetessteapot.h"
-/*
 #include "sceneblur.h"
 #include "sceneedge.h"
 #include "scenebloom.h"
@@ -13,8 +12,6 @@
 #include "sceneshadewire.h"
 
 #include "scenebezcurve.h"
-*/
-/*
 #include "scenemultitex.h"
 #include "scenealpha.h"
 #include "scenerefractcube.h"
@@ -39,8 +36,7 @@
 #include "scenesilhouette.h"
 #include "scenedeferred.h"
 #include "scenenormalmap.h"
-#include "scenefragment.h"Å@
-*/
+#include "scenefragment.h"
 #include "glutils.h"
 
 #include <iostream>
@@ -50,7 +46,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneTessTeapot());
+	scene.reset(new SceneSilhouette());
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
