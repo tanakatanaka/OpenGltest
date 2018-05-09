@@ -7,12 +7,13 @@
 
 #include "targetver.h"
 
-#include <stdio.h>
-#include <tchar.h>
+#include <cstdio>
+#include <memory>
+#include <vector>
 #include "glew.h"
 #include "sdl.h"
 #include "SDL_opengl.h"
-
-
-
-// TODO: プログラムに必要な追加ヘッダーをここで参照してください
+#include "SDL_image.h"
+#include "glutils.h"
+#include "defines.h"
+#include "sdlutil.h"

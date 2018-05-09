@@ -303,6 +303,9 @@
     <ClInclude Include="Frustum.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="sdlutil.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -465,6 +468,9 @@
       <Filter>ソース ファイル\Scene\SceneShadowMap</Filter>
     </ClCompile>
     <ClCompile Include="Frustum.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="sdlutil.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
   </ItemGroup>

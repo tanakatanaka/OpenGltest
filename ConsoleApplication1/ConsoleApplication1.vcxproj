@@ -210,6 +210,7 @@
     <ClInclude Include="SceneToon.h" />
     <ClInclude Include="SceneTwoside.h" />
     <ClInclude Include="SceneUni.h" />
+    <ClInclude Include="sdlutil.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Skybox.h" />
     <ClInclude Include="stdafx.h" />
@@ -257,6 +258,7 @@
     <ClCompile Include="SceneToon.cpp" />
     <ClCompile Include="SceneTwoside.cpp" />
     <ClCompile Include="SceneUni.cpp" />
+    <ClCompile Include="sdlutil.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Skybox.cpp" />
     <ClCompile Include="stdafx.cpp">
