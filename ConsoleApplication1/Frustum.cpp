@@ -4,7 +4,6 @@
 #include <limits>
 #include <cstdio>
 
-#include <glm/gtc/matrix_projection.hpp>
 #include <glm/gtx/transform2.hpp>
 
 Frustum::Frustum(Projection::ProjType t) : type(t)
