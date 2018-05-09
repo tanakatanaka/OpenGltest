@@ -7,6 +7,7 @@
 #include "vbotorus.h"
 #include "vboteapot.h"
 #include "frustum.h"
+#include <memory>
 
 #include <glm/glm.hpp>
 using glm::mat4;
@@ -19,9 +20,9 @@ private:
     Shader prog, solidProg;
     GLuint shadowFBO, pass1Index, pass2Index;
 
-    VBOTeapot *teapot;
-    VBOPlane *plane;
-    VBOTorus *torus;
+    std::unique_ptr<VBOTeapot> teapot;
+	std::unique_ptr<VBOPlane> plane;
+	std::unique_ptr<VBOTorus> torus;
 
     int width, height;
     int shadowMapWidth, shadowMapHeight;
@@ -31,7 +32,7 @@ private:
     mat4 shadowBias;
     float angle;
 
-    Frustum *lightFrustum;
+	std::unique_ptr<Frustum> lightFrustum;
 
     void setMatrices();
     void compileAndLinkShader();

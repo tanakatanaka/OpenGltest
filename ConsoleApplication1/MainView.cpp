@@ -37,6 +37,7 @@
 #include "scenedeferred.h"
 #include "scenenormalmap.h"
 #include "scenefragment.h"
+#include "SceneShadowMap.h"
 #include "glutils.h"
 
 #include <iostream>
@@ -46,7 +47,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene.reset(new SceneSilhouette());
+	scene = std::make_unique<SceneShadowMap>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
