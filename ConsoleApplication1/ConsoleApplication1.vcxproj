@@ -178,6 +178,7 @@
     <ClInclude Include="SceneFog.h" />
     <ClInclude Include="SceneFragment.h" />
     <ClInclude Include="SceneGamma.h" />
+    <ClInclude Include="SceneJitter.h" />
     <ClInclude Include="SceneMsaa.h" />
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneMultitex.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="SceneDeferred.cpp" />
     <ClCompile Include="SceneEdge.cpp" />
     <ClCompile Include="SceneGamma.cpp" />
+    <ClCompile Include="SceneJittercpp.cpp" />
     <ClCompile Include="SceneMsaa.cpp" />
     <ClCompile Include="ScenePcf.cpp" />
     <ClCompile Include="ScenePointSprite.cpp" />

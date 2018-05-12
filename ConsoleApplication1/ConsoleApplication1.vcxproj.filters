@@ -133,6 +133,9 @@
     <Filter Include="ソース ファイル\Scene\ScenePcf">
       <UniqueIdentifier>{140eec88-03b4-4b38-bcd4-86819e3efa76}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneJitter">
+      <UniqueIdentifier>{b6ce2c59-1122-41d9-bac8-ef08a4d6719d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -312,6 +315,9 @@
     <ClInclude Include="ScenePcf.h">
       <Filter>ソース ファイル\Scene\ScenePcf</Filter>
     </ClInclude>
+    <ClInclude Include="SceneJitter.h">
+      <Filter>ソース ファイル\Scene\SceneJitter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -481,6 +487,9 @@
     </ClCompile>
     <ClCompile Include="ScenePcf.cpp">
       <Filter>ソース ファイル\Scene\ScenePcf</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneJittercpp.cpp">
+      <Filter>ソース ファイル\Scene\SceneJitter</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

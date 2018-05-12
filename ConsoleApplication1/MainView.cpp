@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "mainview.h"
+#include "scenejitter.h"
 #include "scenequadtess.h"
 #include "scenetessteapot.h"
 #include "sceneblur.h"
@@ -48,7 +49,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = std::make_unique<ScenePcf>();
+	scene = std::make_unique<SceneJitter>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
