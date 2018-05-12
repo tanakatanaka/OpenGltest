@@ -32,6 +32,7 @@
 #include "sceneUni.h"
 #include "sceneSub.h"
 #include "scenedirectional.h"
+#include "scenepcf.h"
 
 #include "scenesilhouette.h"
 #include "scenedeferred.h"
@@ -47,7 +48,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = std::make_unique<SceneShadowMap>();
+	scene = std::make_unique<ScenePcf>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

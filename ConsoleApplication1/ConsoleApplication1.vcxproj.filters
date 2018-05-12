@@ -130,6 +130,9 @@
     <Filter Include="ソース ファイル\Scene\SceneShadowMap">
       <UniqueIdentifier>{bf9bf9cf-06fe-4089-b0f1-791ad2fae4ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\ScenePcf">
+      <UniqueIdentifier>{140eec88-03b4-4b38-bcd4-86819e3efa76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -306,6 +309,9 @@
     <ClInclude Include="sdlutil.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="ScenePcf.h">
+      <Filter>ソース ファイル\Scene\ScenePcf</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -472,6 +478,9 @@
     </ClCompile>
     <ClCompile Include="sdlutil.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePcf.cpp">
+      <Filter>ソース ファイル\Scene\ScenePcf</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

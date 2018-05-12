@@ -8,8 +8,8 @@ using glm::vec3;
 
 SceneShadowMap::SceneShadowMap()
 {
-	width = 800;
-	height = 600;
+	width = 640;
+	height = 480;
 	shadowMapWidth = 512;
 	shadowMapHeight = 512;
 }
@@ -173,7 +173,7 @@ void SceneShadowMap::render()
 	// Pass 2 (render)
 	float c = 1.0f;
 	vec3 cameraPos(c * 51.5f * cos(angle), c * 7.0f, c * 51.5f * sin(angle));
-	view = glm::lookAt(cameraPos, vec3(0.0f), vec3(0.0f, 1.0f, 0.0f));
+	view = glm::lookAt(cameraPos, vec3(0.0f), vec3(0.0f, -1.0f, 0.0f));
 	prog.setUniform("Light.Position", view * vec4(lightFrustum->getOrigin(), 1.0f));
 	projection = glm::perspective(100.0f, (float)width / height, 0.1f, 100.0f);
 
@@ -226,14 +226,14 @@ void SceneShadowMap::drawScene()
 	model = mat4(1.0f);
 	model *= glm::translate(vec3(0.0f, 0.0f, 0.0f));
 	setMatrices();
-	plane->render();
+	//plane->render();
 	model = mat4(1.0f);
-	model *= glm::translate(vec3(-5.0f, 5.0f, 0.0f));
+	model *= glm::translate(vec3(0.0f, 5.0f, 5.0f));
 	model *= glm::rotate(-90.0f, vec3(0.0f, 0.0f, 1.0f));
 	setMatrices();
-	plane->render();
+	//plane->render();
 	model = mat4(1.0f);
-	model *= glm::translate(vec3(0.0f, 5.0f, -5.0f));
+	model *= glm::translate(vec3(5.0f, 5.0f, 0.0f));
 	model *= glm::rotate(90.0f, vec3(1.0f, 0.0f, 0.0f));
 	setMatrices();
 	plane->render();
