@@ -12,7 +12,8 @@
 using std::cout;
 using std::endl;
 using glm::vec3;
-using std::unique_ptr;
+
+using std::unique_ptr;
 
 SceneReflectCube::SceneReflectCube()
 {

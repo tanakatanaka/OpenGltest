@@ -34,7 +34,7 @@
 #include "sceneSub.h"
 #include "scenedirectional.h"
 #include "scenepcf.h"
-
+#include "sceneao.h"
 #include "scenesilhouette.h"
 #include "scenedeferred.h"
 #include "scenenormalmap.h"
@@ -49,7 +49,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = std::make_unique<SceneJitter>();
+	scene = std::make_unique<SceneAo>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

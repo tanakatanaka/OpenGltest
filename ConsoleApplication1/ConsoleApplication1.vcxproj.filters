@@ -136,6 +136,9 @@
     <Filter Include="ソース ファイル\Scene\SceneJitter">
       <UniqueIdentifier>{b6ce2c59-1122-41d9-bac8-ef08a4d6719d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneAo">
+      <UniqueIdentifier>{bdf2383c-c07e-403b-9c9f-a9aa8b305e0f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -318,6 +321,9 @@
     <ClInclude Include="SceneJitter.h">
       <Filter>ソース ファイル\Scene\SceneJitter</Filter>
     </ClInclude>
+    <ClInclude Include="SceneAo.h">
+      <Filter>ソース ファイル\Scene\SceneAo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -490,6 +496,9 @@
     </ClCompile>
     <ClCompile Include="SceneJittercpp.cpp">
       <Filter>ソース ファイル\Scene\SceneJitter</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneAo.cpp">
+      <Filter>ソース ファイル\Scene\SceneAo</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

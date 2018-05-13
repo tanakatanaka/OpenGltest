@@ -162,6 +162,7 @@
     <ClInclude Include="MainView.h" />
     <ClInclude Include="SceneAds.h" />
     <ClInclude Include="SceneAlpha.h" />
+    <ClInclude Include="SceneAo.h" />
     <ClInclude Include="SceneBasic.h" />
     <ClInclude Include="MainLoop.h" />
     <ClInclude Include="Scene.h" />
@@ -184,6 +185,7 @@
     <ClInclude Include="SceneMultitex.h" />
     <ClInclude Include="SceneNormalMap.h" />
     <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="SceneAo.cpp" />
     <ClCompile Include="SceneBezCurve.cpp" />
     <ClCompile Include="SceneBloom.cpp" />
     <ClCompile Include="SceneBlur.cpp" />
