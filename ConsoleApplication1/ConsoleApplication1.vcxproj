@@ -160,6 +160,7 @@
     <ClInclude Include="Frustum.h" />
     <ClInclude Include="Glutils.h" />
     <ClInclude Include="MainView.h" />
+    <ClInclude Include="NoiseTex.h" />
     <ClInclude Include="SceneAds.h" />
     <ClInclude Include="SceneAlpha.h" />
     <ClInclude Include="SceneAo.h" />
@@ -185,6 +186,7 @@
     <ClInclude Include="SceneMultitex.h" />
     <ClInclude Include="SceneNormalMap.h" />
     <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="NoiseTex.cpp" />
     <ClCompile Include="SceneAo.cpp" />
     <ClCompile Include="SceneBezCurve.cpp" />
     <ClCompile Include="SceneBloom.cpp" />
@@ -194,11 +196,13 @@
     <ClCompile Include="SceneGamma.cpp" />
     <ClCompile Include="SceneJittercpp.cpp" />
     <ClCompile Include="SceneMsaa.cpp" />
+    <ClCompile Include="ScenePaint.cpp" />
     <ClCompile Include="ScenePcf.cpp" />
     <ClCompile Include="ScenePointSprite.cpp" />
     <ClCompile Include="SceneProjTex.cpp" />
     <ClCompile Include="SceneQuadTess.cpp" />
     <ClCompile Include="SceneReflectCube.cpp" />
+    <ClInclude Include="ScenePaint.h" />
     <ClInclude Include="ScenePcf.h" />
     <ClInclude Include="ScenePointSprite.h" />
     <ClInclude Include="SceneProjTex.h" />

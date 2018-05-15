@@ -11,7 +11,7 @@
 #include "scenemsaa.h"
 #include "scenepointsprite.h"
 #include "sceneshadewire.h"
-
+#include "scenepaint.h"
 #include "scenebezcurve.h"
 #include "scenemultitex.h"
 #include "scenealpha.h"
@@ -49,7 +49,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = std::make_unique<SceneAo>();
+	scene = std::make_unique<ScenePaint>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

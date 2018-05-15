@@ -139,6 +139,9 @@
     <Filter Include="ソース ファイル\Scene\SceneAo">
       <UniqueIdentifier>{bdf2383c-c07e-403b-9c9f-a9aa8b305e0f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\ScenePaint">
+      <UniqueIdentifier>{c1ae5452-00cc-42b2-bbee-d549eec1961e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -324,6 +327,12 @@
     <ClInclude Include="SceneAo.h">
       <Filter>ソース ファイル\Scene\SceneAo</Filter>
     </ClInclude>
+    <ClInclude Include="ScenePaint.h">
+      <Filter>ソース ファイル\Scene\ScenePaint</Filter>
+    </ClInclude>
+    <ClInclude Include="NoiseTex.h">
+      <Filter>ソース ファイル\OpenGl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -499,6 +508,12 @@
     </ClCompile>
     <ClCompile Include="SceneAo.cpp">
       <Filter>ソース ファイル\Scene\SceneAo</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePaint.cpp">
+      <Filter>ソース ファイル\Scene\ScenePaint</Filter>
+    </ClCompile>
+    <ClCompile Include="NoiseTex.cpp">
+      <Filter>ソース ファイル\OpenGl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
