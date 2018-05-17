@@ -40,6 +40,7 @@
 #include "scenenormalmap.h"
 #include "scenefragment.h"
 #include "SceneShadowMap.h"
+#include "scenesky.h"
 #include "glutils.h"
 
 #include <iostream>
@@ -49,7 +50,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = std::make_unique<ScenePaint>();
+	scene = std::make_unique<SceneSky>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

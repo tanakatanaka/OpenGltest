@@ -142,6 +142,9 @@
     <Filter Include="ソース ファイル\Scene\ScenePaint">
       <UniqueIdentifier>{c1ae5452-00cc-42b2-bbee-d549eec1961e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneSky">
+      <UniqueIdentifier>{efaaae21-30e3-4b77-b04a-dfc1e076764d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -333,6 +336,9 @@
     <ClInclude Include="NoiseTex.h">
       <Filter>ソース ファイル\OpenGl</Filter>
     </ClInclude>
+    <ClInclude Include="SceneSky.h">
+      <Filter>ソース ファイル\Scene\SceneSky</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -514,6 +520,9 @@
     </ClCompile>
     <ClCompile Include="NoiseTex.cpp">
       <Filter>ソース ファイル\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSky.cpp">
+      <Filter>ソース ファイル\Scene\SceneSky</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

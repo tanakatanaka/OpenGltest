@@ -212,6 +212,7 @@
     <ClInclude Include="SceneShadeWire.h" />
     <ClInclude Include="SceneShadowMap.h" />
     <ClInclude Include="SceneSilhouette.h" />
+    <ClInclude Include="SceneSky.h" />
     <ClInclude Include="SceneSpot.h" />
     <ClInclude Include="SceneSub.h" />
     <ClInclude Include="SceneTessTeapot.h" />
@@ -260,6 +261,7 @@
     <ClCompile Include="SceneShadeWire.cpp" />
     <ClCompile Include="SceneShadowMap.cpp" />
     <ClCompile Include="SceneSilhouette.cpp" />
+    <ClCompile Include="SceneSky.cpp" />
     <ClCompile Include="SceneSpot.cpp" />
     <ClCompile Include="SceneSub.cpp" />
     <ClCompile Include="SceneTessTeapot.cpp" />
