@@ -1,22 +1,25 @@
 #include "stdafx.h"
-#include "scenemsaa.h"
-
+#include "scenewood.h"
 #include <cstdio>
-#include <cstdlib>
+
 #include "glutils.h"
 #include "defines.h"
+#include "noisetex.h"
 
 using glm::vec3;
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform2.hpp>
 
-SceneMsaa::SceneMsaa()
+
+#include<iostream>
+
+SceneWood::SceneWood()
 {
     width = 640;
     height = 480;
 }
 
-void SceneMsaa::initScene()
+void SceneWood::initScene()
 {
     compileAndLinkShader();
 
@@ -24,26 +27,8 @@ void SceneMsaa::initScene()
 
     glEnable(GL_DEPTH_TEST);
 
-    float c = 5.0f;
-    projection = glm::ortho(-0.4f * c, 0.4f * c, -0.3f *c, 0.3f*c, 0.1f, 100.0f);
-
-    plane = new VBOPlane(50.0f, 50.0f, 1, 1);
-    c = 1.5f;
-    torus = new VBOTorus(0.7f * c, 0.3f * c, 50,50);
-    //ogre = new VBOMesh("mesh/bs_ears.obj");
-
-    angle = PI / 2.0;
-
-    prog.setUniform("Light.Intensity", vec3(1.0f,1.0f,1.0f) );
-    prog.setUniform("Gamma",2.2f);
-    //prog.setUniform("Gamma",1.0f);
-
-    GLint bufs, samples;
-    glGetIntegerv(GL_SAMPLE_BUFFERS, &bufs);
-    glGetIntegerv(GL_SAMPLES, &samples);
-    printf("MSAA: buffers = %d samples = %d\n", bufs, samples);
-    glEnable(GL_MULTISAMPLE);
-    //glDisable(GL_MULTISAMPLE);
+    float c = 3.5f;
+    projection = mat4(1.0f);
 
     // Array for quad
     GLfloat verts[] = {
@@ -66,7 +51,6 @@ void SceneMsaa::initScene()
     glBufferData(GL_ARRAY_BUFFER, 6 * 2 * sizeof(float), tc, GL_STATIC_DRAW);
 
     // Set up the vertex array object
-
     glGenVertexArrays( 1, &quad );
     glBindVertexArray(quad);
 
@@ -79,57 +63,68 @@ void SceneMsaa::initScene()
     glEnableVertexAttribArray(2);  // Texture coordinates
 
     glBindVertexArray(0);
+
+    prog.setUniform("Color", vec4(1.0f,0.0f,0.0f,1.0f));
+    prog.setUniform("NoiseTex", 0);
+
+    mat4 slice;
+    slice *= glm::rotate(10.0f, vec3(1.0, 0.0, 0.0));
+    slice *= glm::rotate(-20.0f, vec3(0.0,0.0,1.0));
+    slice *= glm::scale(vec3(40.0, 40.0, 1.0));
+    slice *= glm::translate( vec3(-0.35, -0.5, 2.0));
+
+    prog.setUniform("Slice", slice);
+
+    GLuint noiseTex = NoiseTex::generate2DTex(true);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, noiseTex);
 }
 
+void SceneWood::update( float t ) { }
 
-void SceneMsaa::update( float t )
+void SceneWood::render()
 {
-    angle += 0.001f;
-    if( angle > TWOPI) angle -= TWOPI;
-}
+    view = mat4(1.0f);
 
-void SceneMsaa::render()
-{
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    view = glm::lookAt(vec3(3.0f * cos(angle),0.0f,3.0f * sin(angle)), vec3(0.0f,0.0f,0.0f), vec3(0.0f,1.0f,0.0f));
-
-    model = glm::rotate(30.0f, vec3(0.0f,0.0f,1.0f));
-    setMatrices();
-
-    // Render the quad
-    glBindVertexArray(quad);
-    glDrawArrays(GL_TRIANGLES, 0, 6);
-
+    drawScene();
     glFinish();
 }
 
-void SceneMsaa::setMatrices()
+void SceneWood::drawScene()
+{
+    model = mat4(1.0f);
+    setMatrices();
+
+    glBindVertexArray(quad);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+}
+
+void SceneWood::setMatrices()
 {
     mat4 mv = view * model;
-    prog.setUniform("ModelViewMatrix", mv);
-    prog.setUniform("NormalMatrix",
-                    mat3( vec3(mv[0]), vec3(mv[1]), vec3(mv[2]) ));
+    //prog.setUniform("ModelViewMatrix", mv);
+    //prog.setUniform("NormalMatrix",
+    //                mat3( vec3(mv[0]), vec3(mv[1]), vec3(mv[2]) ));
     prog.setUniform("MVP", projection * mv);
 }
 
-void SceneMsaa::resize(int w, int h)
+void SceneWood::resize(int w, int h)
 {
     glViewport(0,0,w,h);
     width = w;
     height = h;
-    projection = glm::perspective(60.0f, (float)w/h, 0.3f, 100.0f);
 }
 
-void SceneMsaa::compileAndLinkShader()
+void SceneWood::compileAndLinkShader()
 {
-    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/centroid.vs",GLSLShader::VERTEX) )
+    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/wood.vs",GLSLShader::VERTEX) )
     {
         printf("Vertex shader failed to compile!\n%s",
                prog.Log().c_str());
         exit(1);
     }
-    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/centroid.fs",GLSLShader::FRAGMENT))
+    if( ! prog.CompileShaderFromFile("../ConsoleApplication1/Shader/wood.fs",GLSLShader::FRAGMENT))
     {
         printf("Fragment shader failed to compile!\n%s",
                prog.Log().c_str());
@@ -144,4 +139,3 @@ void SceneMsaa::compileAndLinkShader()
 
     prog.Use();
 }
-

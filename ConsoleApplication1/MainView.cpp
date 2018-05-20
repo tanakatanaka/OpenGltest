@@ -42,7 +42,11 @@
 #include "SceneShadowMap.h"
 #include "scenesky.h"
 #include "glutils.h"
-
+#include "scenewood.h"
+#include "scenedecay.h"
+#include "scenenightvision.h"
+#include "scenewave.h"
+#include "sceneparticles.h"
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -50,7 +54,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = std::make_unique<SceneSky>();
+	scene = std::make_unique<SceneParticles>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

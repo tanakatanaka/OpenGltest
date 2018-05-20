@@ -12,14 +12,11 @@ uniform struct MaterialInfo {
     float Shininess;
 } Material;
 
-uniform sampler2D NoiseTex;
-
 in vec4 Position;
 in vec3 Normal;
 in vec2 TexCoord;
 
-uniform vec3 PaintColor = vec3(1.0);
-uniform float Threshold = 0.65;
+uniform float Time;
 
 layout ( location = 0 ) out vec4 FragColor;
 
@@ -36,15 +33,10 @@ vec3 phongModel(vec3 kd) {
         spec = Light.Intensity * Material.Ks *
             pow( max( dot(r,v), 0.0 ), Material.Shininess );
 
-    return diffuse + spec;
+    return Material.Ka * Light.Intensity + diffuse + spec;
 }
 
 void main()
 {
-    vec4 noise = texture( NoiseTex, TexCoord );
-    vec3 color = Material.Kd;
-    if( noise.g > Threshold ) color = PaintColor;
-    else discard;
-
-    FragColor = vec4( phongModel(color) , 1.0 );
+    FragColor = vec4( phongModel(Material.Kd) , 1.0 );
 }

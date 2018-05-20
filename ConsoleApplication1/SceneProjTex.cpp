@@ -12,7 +12,8 @@ using glm::vec3;
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform2.hpp>
 
-using std::unique_ptr;
+
+using std::unique_ptr;
 
 
 SceneProjTex::SceneProjTex()

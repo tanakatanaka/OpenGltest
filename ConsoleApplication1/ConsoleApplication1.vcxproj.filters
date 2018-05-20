@@ -145,6 +145,21 @@
     <Filter Include="ソース ファイル\Scene\SceneSky">
       <UniqueIdentifier>{efaaae21-30e3-4b77-b04a-dfc1e076764d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneWood">
+      <UniqueIdentifier>{2783aa2b-3016-4e98-b2a0-797f853a1cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneDecay">
+      <UniqueIdentifier>{35807905-f02e-47a8-83e5-9e743eafcea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneNightVision">
+      <UniqueIdentifier>{a25e1394-1604-4fd5-9fe5-725cebd3d8bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneWave">
+      <UniqueIdentifier>{0848ba36-f09b-4c9a-80ad-adb667c1ff04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneParticles">
+      <UniqueIdentifier>{4416575f-bbbb-4115-9a85-9752ec251202}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -339,6 +354,21 @@
     <ClInclude Include="SceneSky.h">
       <Filter>ソース ファイル\Scene\SceneSky</Filter>
     </ClInclude>
+    <ClInclude Include="SceneWood.h">
+      <Filter>ソース ファイル\Scene\SceneWood</Filter>
+    </ClInclude>
+    <ClInclude Include="scenedecay.h">
+      <Filter>ソース ファイル\Scene\SceneDecay</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneNightVision.h">
+      <Filter>ソース ファイル\Scene\SceneNightVision</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneWave.h">
+      <Filter>ソース ファイル\Scene\SceneWave</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneParticles.h">
+      <Filter>ソース ファイル\Scene\SceneParticles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -523,6 +553,21 @@
     </ClCompile>
     <ClCompile Include="SceneSky.cpp">
       <Filter>ソース ファイル\Scene\SceneSky</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneWood.cpp">
+      <Filter>ソース ファイル\Scene\SceneWood</Filter>
+    </ClCompile>
+    <ClCompile Include="scenedecay.cpp">
+      <Filter>ソース ファイル\Scene\SceneDecay</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneNightVision.cpp">
+      <Filter>ソース ファイル\Scene\SceneNightVision</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneWave.cpp">
+      <Filter>ソース ファイル\Scene\SceneWave</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneParticles.cpp">
+      <Filter>ソース ファイル\Scene\SceneParticles</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

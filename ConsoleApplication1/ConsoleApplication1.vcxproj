@@ -171,6 +171,7 @@
     <ClInclude Include="SceneBloom.h" />
     <ClInclude Include="SceneBlur.h" />
     <ClInclude Include="SceneBox.h" />
+    <ClInclude Include="scenedecay.h" />
     <ClInclude Include="SceneDeferred.h" />
     <ClInclude Include="SceneDiffuse.h" />
     <ClInclude Include="SceneDirectional.h" />
@@ -184,6 +185,7 @@
     <ClInclude Include="SceneMsaa.h" />
     <ClInclude Include="SceneMulti.h" />
     <ClInclude Include="SceneMultitex.h" />
+    <ClInclude Include="SceneNightVision.h" />
     <ClInclude Include="SceneNormalMap.h" />
     <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="NoiseTex.cpp" />
@@ -191,18 +193,22 @@
     <ClCompile Include="SceneBezCurve.cpp" />
     <ClCompile Include="SceneBloom.cpp" />
     <ClCompile Include="SceneBlur.cpp" />
+    <ClCompile Include="scenedecay.cpp" />
     <ClCompile Include="SceneDeferred.cpp" />
     <ClCompile Include="SceneEdge.cpp" />
     <ClCompile Include="SceneGamma.cpp" />
     <ClCompile Include="SceneJittercpp.cpp" />
     <ClCompile Include="SceneMsaa.cpp" />
+    <ClCompile Include="SceneNightVision.cpp" />
     <ClCompile Include="ScenePaint.cpp" />
+    <ClCompile Include="SceneParticles.cpp" />
     <ClCompile Include="ScenePcf.cpp" />
     <ClCompile Include="ScenePointSprite.cpp" />
     <ClCompile Include="SceneProjTex.cpp" />
     <ClCompile Include="SceneQuadTess.cpp" />
     <ClCompile Include="SceneReflectCube.cpp" />
     <ClInclude Include="ScenePaint.h" />
+    <ClInclude Include="SceneParticles.h" />
     <ClInclude Include="ScenePcf.h" />
     <ClInclude Include="ScenePointSprite.h" />
     <ClInclude Include="SceneProjTex.h" />
@@ -221,6 +227,8 @@
     <ClInclude Include="SceneToon.h" />
     <ClInclude Include="SceneTwoside.h" />
     <ClInclude Include="SceneUni.h" />
+    <ClInclude Include="SceneWave.h" />
+    <ClInclude Include="SceneWood.h" />
     <ClInclude Include="sdlutil.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Skybox.h" />
@@ -270,6 +278,8 @@
     <ClCompile Include="SceneToon.cpp" />
     <ClCompile Include="SceneTwoside.cpp" />
     <ClCompile Include="SceneUni.cpp" />
+    <ClCompile Include="SceneWave.cpp" />
+    <ClCompile Include="SceneWood.cpp" />
     <ClCompile Include="sdlutil.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Skybox.cpp" />
