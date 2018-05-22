@@ -65,6 +65,11 @@ VBOTorus::VBOTorus(float outerRadius, float innerRadius, int nsides, int nrings)
     glBindVertexArray(0);
 }
 
+unsigned int VBOTorus::getVertexArrayHandle() const 
+{
+    return vaoHandle;
+}
+
 void VBOTorus::render() const {
     glBindVertexArray(vaoHandle);
     glDrawElements(GL_TRIANGLES, 6 * faces, GL_UNSIGNED_INT, ((GLubyte *)NULL + (0)));

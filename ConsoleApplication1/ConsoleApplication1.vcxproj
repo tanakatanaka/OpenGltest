@@ -202,6 +202,8 @@
     <ClCompile Include="SceneNightVision.cpp" />
     <ClCompile Include="ScenePaint.cpp" />
     <ClCompile Include="SceneParticles.cpp" />
+    <ClCompile Include="SceneParticlesFeedback.cpp" />
+    <ClCompile Include="SceneParticlesInstanced.cpp" />
     <ClCompile Include="ScenePcf.cpp" />
     <ClCompile Include="ScenePointSprite.cpp" />
     <ClCompile Include="SceneProjTex.cpp" />
@@ -209,6 +211,8 @@
     <ClCompile Include="SceneReflectCube.cpp" />
     <ClInclude Include="ScenePaint.h" />
     <ClInclude Include="SceneParticles.h" />
+    <ClInclude Include="SceneParticlesFeedback.h" />
+    <ClInclude Include="SceneParticlesInstanced.h" />
     <ClInclude Include="ScenePcf.h" />
     <ClInclude Include="ScenePointSprite.h" />
     <ClInclude Include="SceneProjTex.h" />

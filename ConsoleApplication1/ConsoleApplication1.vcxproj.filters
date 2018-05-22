@@ -160,6 +160,12 @@
     <Filter Include="ソース ファイル\Scene\SceneParticles">
       <UniqueIdentifier>{4416575f-bbbb-4115-9a85-9752ec251202}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneParticlesFeedback">
+      <UniqueIdentifier>{f5c765f4-d726-4697-9f8e-bc65a954bbb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneParticlesInstanced">
+      <UniqueIdentifier>{963c702c-e3ab-483b-af8c-8a737e269282}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -369,6 +375,12 @@
     <ClInclude Include="SceneParticles.h">
       <Filter>ソース ファイル\Scene\SceneParticles</Filter>
     </ClInclude>
+    <ClInclude Include="SceneParticlesFeedback.h">
+      <Filter>ソース ファイル\Scene\SceneParticlesFeedback</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneParticlesInstanced.h">
+      <Filter>ソース ファイル\Scene\SceneParticlesInstanced</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -568,6 +580,12 @@
     </ClCompile>
     <ClCompile Include="SceneParticles.cpp">
       <Filter>ソース ファイル\Scene\SceneParticles</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneParticlesFeedback.cpp">
+      <Filter>ソース ファイル\Scene\SceneParticlesFeedback</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneParticlesInstanced.cpp">
+      <Filter>ソース ファイル\Scene\SceneParticlesInstanced</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

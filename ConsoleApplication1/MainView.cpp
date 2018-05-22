@@ -47,6 +47,8 @@
 #include "scenenightvision.h"
 #include "scenewave.h"
 #include "sceneparticles.h"
+#include "sceneparticlesfeedback.h"
+#include "sceneparticlesinstanced.h"
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -54,7 +56,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = std::make_unique<SceneParticles>();
+	scene = std::make_unique<SceneParticlesInstanced>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
