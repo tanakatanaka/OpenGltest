@@ -177,6 +177,7 @@
     <ClInclude Include="SceneDirectional.h" />
     <ClInclude Include="SceneDiscard.h" />
     <ClInclude Include="SceneEdge.h" />
+    <ClInclude Include="SceneFire.h" />
     <ClInclude Include="SceneFlat.h" />
     <ClInclude Include="SceneFog.h" />
     <ClInclude Include="SceneFragment.h" />
@@ -196,6 +197,7 @@
     <ClCompile Include="scenedecay.cpp" />
     <ClCompile Include="SceneDeferred.cpp" />
     <ClCompile Include="SceneEdge.cpp" />
+    <ClCompile Include="SceneFire.cpp" />
     <ClCompile Include="SceneGamma.cpp" />
     <ClCompile Include="SceneJittercpp.cpp" />
     <ClCompile Include="SceneMsaa.cpp" />

@@ -166,6 +166,9 @@
     <Filter Include="ソース ファイル\Scene\SceneParticlesInstanced">
       <UniqueIdentifier>{963c702c-e3ab-483b-af8c-8a737e269282}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneFire">
+      <UniqueIdentifier>{b4e02aeb-682d-4107-9460-465615702dfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -381,6 +384,9 @@
     <ClInclude Include="SceneParticlesInstanced.h">
       <Filter>ソース ファイル\Scene\SceneParticlesInstanced</Filter>
     </ClInclude>
+    <ClInclude Include="SceneFire.h">
+      <Filter>ソース ファイル\Scene\SceneFire</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -586,6 +592,9 @@
     </ClCompile>
     <ClCompile Include="SceneParticlesInstanced.cpp">
       <Filter>ソース ファイル\Scene\SceneParticlesInstanced</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneFire.cpp">
+      <Filter>ソース ファイル\Scene\SceneFire</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

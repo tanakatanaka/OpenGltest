@@ -49,6 +49,7 @@
 #include "sceneparticles.h"
 #include "sceneparticlesfeedback.h"
 #include "sceneparticlesinstanced.h"
+#include "scenefire.h"
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -56,7 +57,7 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
-	scene = std::make_unique<SceneParticlesInstanced>();
+	scene = std::make_unique<SceneFire>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
