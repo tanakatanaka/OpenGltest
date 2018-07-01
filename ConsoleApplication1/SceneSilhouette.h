@@ -7,7 +7,7 @@
 #include "vbotorus.h"
 #include "vboteapot.h"
 #include "vbomeshadj.h"
-
+#include "vbomesh.h"
 #include <glm/glm.hpp>
 using glm::mat4;
 
@@ -18,7 +18,7 @@ private:
 
     int width, height;
 
-    VBOMeshAdj *ogre;
+	VBOTorus *torus;
 
     mat4 model;
     mat4 view, viewport;
