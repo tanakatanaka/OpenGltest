@@ -1,6 +1,6 @@
 #version 400
 
-layout( triangles_adjacency ) in;
+layout( triangles ) in;
 layout( triangle_strip, max_vertices = 3 ) out;
 
 out vec3 GNormal;
@@ -29,7 +29,7 @@ void emitEdgeQuad( vec3 e0, vec3 e1 )
     vec2 v = normalize(e1.xy - e0.xy);
     vec2 n = vec2(-v.y, v.x) * EdgeWidth;
 
-    //GIsEdge = 1;   // This is part of the sil. edge
+    GIsEdge = 1;   // This is part of the sil. edge
 
     gl_Position = vec4( e0.xy - ext, e0.z, 1.0 ); EmitVertex();
     gl_Position = vec4( e0.xy - n - ext, e0.z, 1.0 ); EmitVertex();
@@ -53,39 +53,30 @@ void main()
     vec3 p4a = gl_in[4].gl_Position.xyz / gl_in[4].gl_Position.w;
     vec3 p5a = gl_in[5].gl_Position.xyz / gl_in[5].gl_Position.w;
 
-    //if( isFrontFacing(p0a, p2a, p4a) ) 
+   // if( isFrontFacing(p2a, p0a, p1a) ) 
     {
         if( ! isFrontFacing(p0a,p1a,p2a) ) emitEdgeQuad(p0a,p2a);
         //if( ! isFrontFacing(p2a,p3a,p4a) ) emitEdgeQuad(p2a,p4a);
         //if( ! isFrontFacing(p4a,p5a,p0a) ) emitEdgeQuad(p4a,p0a);
     }
+    
+    GIsEdge = 0;   // This triangle is not part of an edge.
 	
-    float a = length(p1 - p2);
-    float b = length(p2 - p0);
-    float c = length(p1 - p0);
-    float alpha = acos( (b*b + c*c - a*a) / (2.0*b*c) );
-    float beta = acos( (a*a + c*c - b*b) / (2.0*a*c) );
-    float ha = abs( c * sin( beta ) );
-    float hb = abs( c * sin( alpha ) );
-    float hc = abs( b * sin( alpha ) );
-
-    GEdgeDistance = vec3( ha, 0, 0 );
+	
     GNormal = VNormal[0];
     GPosition = VPosition[0];
     gl_Position = gl_in[0].gl_Position;
     EmitVertex();
-
-    GEdgeDistance = vec3( 0, hb, 0 );
-    GNormal = VNormal[1];
+	
+	GNormal = VNormal[1];
     GPosition = VPosition[1];
     gl_Position = gl_in[1].gl_Position;
     EmitVertex();
-
-    GEdgeDistance = vec3( 0, 0, hc );
+	
     GNormal = VNormal[2];
     GPosition = VPosition[2];
     gl_Position = gl_in[2].gl_Position;
     EmitVertex();
-
-    EndPrimitive();
+	
+	EndPrimitive();
 }
