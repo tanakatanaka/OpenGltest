@@ -26,7 +26,7 @@ void SceneToon::initScene()
     teapot = new VBOTeapot(14, glm::mat4(1.0f));
     torus = new VBOTorus(1.75f * 0.75f, 0.75f * 0.75f, 50, 50);
 
-    view = glm::lookAt(vec3(2.0f,4.0f,6.5f), vec3(0.0f,0.75f,0.0f), vec3(0.0f,-1.0f,0.0f));
+    view = glm::lookAt(vec3(2.0f,4.0f,6.5f), vec3(0.0f,0.75f,0.0f), vec3(0.0f,1.0f,0.0f));
     projection = mat4(1.0f);
 
     angle = 0.0;
@@ -57,8 +57,22 @@ void SceneToon::render()
     setMatrices();
     teapot->render();
 
+	//shadow
     prog.setUniform("Kd", 0.9f, 0.5f, 0.3f);
     prog.setUniform("Ka", 0.9f * 0.3f, 0.5f * 0.3f, 0.3f * 0.3f);
+
+	model = mat4(1.0f);
+	model *= glm::translate(vec3(0.0f, 0.0f, -2.0f));
+	model *= glm::rotate(45.0f, vec3(0.0f, 1.0f, 0.0f));
+	model *= glm::rotate(-90.0f, vec3(1.0f, 0.0f, 0.0f));
+	setMatrices();
+	teapot->render();
+
+	prog.setUniform("Kd", 0.9f, 0.5f, 0.3f);
+	prog.setUniform("Ka", 0.9f * 0.3f, 0.5f * 0.3f, 0.3f * 0.3f);
+
+
+
 
     model = mat4(1.0f);
     model *= glm::translate(vec3(-1.0f,0.75f,3.0f));

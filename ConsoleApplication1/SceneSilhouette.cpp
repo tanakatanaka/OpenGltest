@@ -38,7 +38,8 @@ void SceneSilhouette::initScene()
     ///////////// Uniforms ////////////////////
     prog.setUniform("EdgeWidth", 0.015f);
     prog.setUniform("PctExtend", 0.25f);
-    prog.setUniform("LineColor", vec4(0.05f,0.0f,0.05f,1.0f));
+    //prog.setUniform("LineColor", vec4(0.05f,0.0f,0.05f,1.0f));
+	prog.setUniform("LineColor", vec4(1.0f, 0.0f, 0.0f, 1.0f));
     prog.setUniform("Material.Kd", 0.7f, 0.5f, 0.2f);
     prog.setUniform("Light.Position", 0.0f,0.0f,0.0f);
     prog.setUniform("Material.Ka", 0.2f, 0.2f, 0.2f);

@@ -10,7 +10,7 @@ void main() {
     if( gl_FrontFacing ) {
         FragColor = vec4(FrontColor, 1.0);
     } else {
-        FragColor = mix( vec4(BackColor, 1.0), vec4(1.0,0.0,0.0,1.0), 0.7 );
+        //FragColor = mix( vec4(BackColor, 1.0), vec4(1.0,0.0,0.0,1.0), 0.7 );
         //FragColor = vec4(BackColor, 1.0);
     }
 }

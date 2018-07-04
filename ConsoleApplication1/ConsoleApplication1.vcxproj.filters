@@ -169,6 +169,9 @@
     <Filter Include="ソース ファイル\Scene\SceneFire">
       <UniqueIdentifier>{b4e02aeb-682d-4107-9460-465615702dfc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneTest">
+      <UniqueIdentifier>{f4167e46-ecfe-4ebc-8701-fdd4ec83f723}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -387,6 +390,9 @@
     <ClInclude Include="SceneFire.h">
       <Filter>ソース ファイル\Scene\SceneFire</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTest.h">
+      <Filter>ソース ファイル\Scene\SceneTest</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -595,6 +601,9 @@
     </ClCompile>
     <ClCompile Include="SceneFire.cpp">
       <Filter>ソース ファイル\Scene\SceneFire</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTest.cpp">
+      <Filter>ソース ファイル\Scene\SceneTest</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
