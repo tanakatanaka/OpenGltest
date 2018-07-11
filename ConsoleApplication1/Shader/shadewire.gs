@@ -1,14 +1,19 @@
 #version 400
 
-layout( triangles ) in;
-layout( triangle_strip, max_vertices = 3 ) out;
+layout( triangles_adjacency ) in;
+layout( triangle_strip, max_vertices = 15 ) out;
 
 out vec3 GNormal;
 out vec3 GPosition;
-noperspective out vec3 GEdgeDistance;
+
+// Which triangle edges are silhouette edges
+flat out int GIsEdge;
 
 in vec3 VNormal[];
 in vec3 VPosition[];
+
+uniform float EdgeWidth;
+uniform float PctExtend;
 
 uniform mat4 ViewportMatrix;  // Viewport matrix
 

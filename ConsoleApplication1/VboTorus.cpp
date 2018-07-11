@@ -70,9 +70,10 @@ unsigned int VBOTorus::getVertexArrayHandle() const
     return vaoHandle;
 }
 
-void VBOTorus::render() const {
-    glBindVertexArray(vaoHandle);
-    glDrawElements(GL_TRIANGLES, 6 * faces, GL_UNSIGNED_INT, ((GLubyte *)NULL + (0)));
+void VBOTorus::render() const 
+{
+	glBindVertexArray(vaoHandle);
+	glDrawElements(GL_TRIANGLES_ADJACENCY, faces * 12, GL_UNSIGNED_SHORT, ((GLubyte *)NULL + (0)));
 }
 
 void VBOTorus::generateVerts(float * verts, float * norms, float * tex,
