@@ -19,6 +19,7 @@ private:
     int width, height;
 
 	VBOTorus *torus;
+	VBOMeshAdj *ogre;
 
     mat4 model;
     mat4 view, viewport;

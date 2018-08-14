@@ -50,7 +50,6 @@
 #include "sceneparticlesfeedback.h"
 #include "sceneparticlesinstanced.h"
 #include "scenefire.h"
-#include "SceneTest.h"
 #include <iostream>
 using std::cout;
 using std::endl;

@@ -30,8 +30,8 @@ void SceneSilhouette::initScene()
 
     glEnable(GL_DEPTH_TEST);
 
-    // ogre = new VBOMeshAdj("../ConsoleApplication1/Media/pig_triangulated.obj");
-	torus = new VBOTorus(0.7f, 0.3f, 50, 50);
+     ogre = new VBOMeshAdj("../ConsoleApplication1/Media/pig_triangulated.obj");
+	//torus = new VBOTorus(0.7f, 0.3f, 50, 50);
 
     angle = PI / 2.0;    
 
@@ -66,7 +66,7 @@ void SceneSilhouette::render()
 
     model = mat4(1.0f);
     setMatrices();
-	torus->render();
+	ogre->render();
 }
 
 void SceneSilhouette::setMatrices()
