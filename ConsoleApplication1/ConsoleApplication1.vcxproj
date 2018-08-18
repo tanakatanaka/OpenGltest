@@ -224,6 +224,7 @@
     <ClInclude Include="SceneRefractCube.h" />
     <ClInclude Include="SceneRendertoTex.h" />
     <ClInclude Include="SceneShadeWire.h" />
+    <ClInclude Include="SceneShadow.h" />
     <ClInclude Include="SceneShadowMap.h" />
     <ClInclude Include="SceneSilhouette.h" />
     <ClInclude Include="SceneSky.h" />
@@ -275,6 +276,7 @@
     <ClCompile Include="SceneRefractCube.cpp" />
     <ClCompile Include="SceneRendertoTex.cpp" />
     <ClCompile Include="SceneShadeWire.cpp" />
+    <ClCompile Include="SceneShadow.cpp" />
     <ClCompile Include="SceneShadowMap.cpp" />
     <ClCompile Include="SceneSilhouette.cpp" />
     <ClCompile Include="SceneSky.cpp" />

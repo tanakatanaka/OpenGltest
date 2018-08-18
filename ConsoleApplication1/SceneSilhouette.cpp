@@ -51,7 +51,7 @@ void SceneSilhouette::initScene()
 
 void SceneSilhouette::update( float t )
 {
-    angle += 0.001f;
+    //angle += 0.001f;
     if( angle > TWOPI) angle -= TWOPI;
 }
 

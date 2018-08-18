@@ -50,6 +50,7 @@
 #include "sceneparticlesfeedback.h"
 #include "sceneparticlesinstanced.h"
 #include "scenefire.h"
+#include "SceneShadow.h"
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -58,7 +59,7 @@ using std::endl;
 void  MainView::InitializeGL()
 {
 	//scene = std::make_unique<SceneShadeWire>();
-	scene = std::make_unique<SceneSilhouette>();
+	scene = std::make_unique<SceneShadow>();
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
