@@ -170,9 +170,10 @@ void SceneShadow::render()
 	}
 	float c = 1.0f;
 	vec3 cameraPos(c * 101.5f * cos(angle), c * 7.0f, c * 101.5f * sin(angle));
-	view = glm::lookAt(cameraPos, vec3(0.0f), vec3(0.0f, -1.0f, 0.0f));
+	view = glm::lookAt(vec3(7.0f * cos(angle), 4.0f, 7.0f * sin(angle)), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, -1.0f, 0.0f));
+	projection = glm::perspective(200.0f, (float)width / height, 0.3f, 1000.0f);
 	prog.setUniform("Light.Position", view * vec4(lightFrustum->getOrigin(), 1.0f));
-	projection = glm::perspective(100.0f, (float)width / height, 0.1f, 100.0f);
+
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -200,32 +201,35 @@ void SceneShadow::render()
 void SceneShadow::drawScene()
 {
 	vec3 color = vec3(0.7f, 0.5f, 0.3f);
-	prog.setUniform("Material.Ka", color * 0.05f);
-	prog.setUniform("Material.Kd", color);
-	prog.setUniform("Material.Ks", vec3(0.9f, 0.9f, 0.9f));
-	prog.setUniform("Material.Shininess", 150.0f);
+	prog.setUniform("Light.Position", vec4(0.0f, 0.0f, 0.0f, 1.0f));
+	prog.setUniform("Material.Kd", 0.9f, 0.9f, 0.9f);
+	prog.setUniform("Material.Ks", 0.95f, 0.95f, 0.95f);
+	prog.setUniform("Material.Ka", 0.1f, 0.1f, 0.1f);
+	prog.setUniform("Material.Shininess", 100.0f);
+
 	model = mat4(1.0f);
 	model *= glm::translate(vec3(0.0f, 0.0f, 0.0f));
 	model *= glm::rotate(-90.0f, vec3(1.0f, 0.0f, 0.0f));
 	setMatrices();
 	teapot->render();
 
-	prog.setUniform("Material.Ka", color * 0.05f);
-	prog.setUniform("Material.Kd", color);
-	prog.setUniform("Material.Ks", vec3(0.9f, 0.9f, 0.9f));
-	prog.setUniform("Material.Shininess", 150.0f);
+	prog.setUniform("Material.Kd", 0.4f, 0.4f, 0.4f);
+	prog.setUniform("Material.Ks", 0.0f, 0.0f, 0.0f);
+	prog.setUniform("Material.Ka", 0.1f, 0.1f, 0.1f);
+	prog.setUniform("Material.Shininess", 1.0f);
 	model = mat4(1.0f);
-	model *= glm::translate(vec3(0.0f, 2.0f, 5.0f));
-	model *= glm::rotate(-45.0f, vec3(1.0f, 0.0f, 0.0f));
+	model *= glm::translate(vec3(0.0f, -0.75f, 0.0f));
 	setMatrices();
 	plane->render();
 
-	prog.setUniform("Material.Kd", 0.25f, 0.25f, 0.25f);
-	prog.setUniform("Material.Ks", 0.0f, 0.0f, 0.0f);
-	prog.setUniform("Material.Ka", 0.05f, 0.05f, 0.05f);
-	prog.setUniform("Material.Shininess", 1.0f);
+	prog.setUniform("Light.Position", vec4(0.0f, 0.0f, 0.0f, 1.0f));
+	prog.setUniform("Material.Kd", 0.9f, 0.5f, 0.2f);
+	prog.setUniform("Material.Ks", 0.95f, 0.95f, 0.95f);
+	prog.setUniform("Material.Ka", 0.1f, 0.1f, 0.1f);
+	prog.setUniform("Material.Shininess", 100.0f);
 	model = mat4(1.0f);
-	model *= glm::translate(vec3(0.0f, 0.0f, 0.0f));
+	model *= glm::translate(vec3(1.0f, 1.0f, 3.0f));
+	model *= glm::rotate(90.0f, vec3(1.0f, 0.0f, 0.0f));
 	setMatrices();
 	torus->render();
 	model = mat4(1.0f);
