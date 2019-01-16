@@ -53,13 +53,41 @@
 #include "SceneShadow.h"
 #include <iostream>
 using std::cout;
+using std::cin;
 using std::endl;
 #include <cstdio>
 
 void  MainView::InitializeGL()
 {
-	//scene = std::make_unique<SceneShadeWire>();
-	scene = std::make_unique<SceneShadow>();
+	int sceneId = 0;
+	cout << "確認したいシーン?\n";
+	
+	while (1)
+	{
+		cout << "1:toon 2:shadow 3:spot \n";
+		cin >> sceneId;
+
+		if (sceneId >= SceneId::MINID && sceneId < SceneId::MAXCOUNT)
+		{
+			break;
+		}
+	}
+
+	switch(sceneId)
+	{
+		case SceneId::TOON:
+			scene = std::make_unique<SceneToon>();
+			break;
+
+		case SceneId::SHADOW:
+			scene = std::make_unique<SceneShadow>();
+			break;
+
+		case SceneId::SHADOWMAP:
+			scene = std::make_unique<SceneShadowMap>();
+			break;
+	}
+
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();

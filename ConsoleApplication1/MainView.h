@@ -7,8 +7,17 @@
 class MainView
 {
 private:
-
     std::unique_ptr<Scene> scene;
+
+	enum SceneId
+	{
+		MINID = 1,
+		TOON = MINID,
+		SHADOW,
+		SHADOWMAP,
+		MAXCOUNT
+	};
+
 
 public:
     void InitializeGL();
