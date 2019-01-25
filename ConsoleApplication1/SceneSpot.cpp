@@ -22,11 +22,11 @@ void SceneSpot::initScene()
 
     glEnable(GL_DEPTH_TEST);
 
-    plane = new VBOPlane(50.0f, 50.0f, 1, 1);
+     plane = new VBOPlane(50.0f, 50.0f, 1, 1);
     teapot = new VBOTeapot(14, glm::mat4(1.0f));
     torus = new VBOTorus(1.75f * 0.75f, 0.75f * 0.75f, 50, 50);
 
-    view = glm::lookAt(vec3(2.0f,2.0f,7.5f), vec3(0.0f,0.25f,0.0f), vec3(0.0f,-3.0f,0.0f));
+	view = glm::lookAt(vec3(2.0f, 4.0f, 6.5f), vec3(0.0f, 0.75f, 0.0f), vec3(0.0f, -1.0f, 0.0f));
     projection = mat4(1.0f);
 
     angle = 0.0;
@@ -98,7 +98,7 @@ void SceneSpot::resize(int w, int h)
     glViewport(0,0,w,h);
     width = w;
     height = h;
-    projection = glm::perspective(60.0f, (float)w/h, 0.3f, 100.0f);
+    projection = glm::perspective(30.0f, (float)w/h, 0.2f, 100.0f);
 }
 
 void SceneSpot::compileAndLinkShader()

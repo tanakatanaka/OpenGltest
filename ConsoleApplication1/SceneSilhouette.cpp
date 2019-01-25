@@ -30,7 +30,7 @@ void SceneSilhouette::initScene()
 
     glEnable(GL_DEPTH_TEST);
 
-     ogre = new VBOMeshAdj("../ConsoleApplication1/Media/pig_triangulated.obj");
+     ogre = new VBOMeshAdj("../ConsoleApplication1/Media/Glock 3d.obj");
 	//torus = new VBOTorus(0.7f, 0.3f, 50, 50);
 
     angle = PI / 2.0;    

@@ -8,13 +8,15 @@ class MainView
 {
 private:
     std::unique_ptr<Scene> scene;
+	bool IsEnd = false;
 
 	enum SceneId
 	{
 		MINID = 1,
 		TOON = MINID,
-		SHADOW,
-		SHADOWMAP,
+		EDGE,
+		SPOT,
+		BLOOM,
 		MAXCOUNT
 	};
 

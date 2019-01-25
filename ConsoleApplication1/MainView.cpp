@@ -64,7 +64,7 @@ void  MainView::InitializeGL()
 	
 	while (1)
 	{
-		cout << "1:toon 2:shadow 3:spot \n";
+		cout << "1:toon 2:edge 3:spot 4:Bloom \n";
 		cin >> sceneId;
 
 		if (sceneId >= SceneId::MINID && sceneId < SceneId::MAXCOUNT)
@@ -79,12 +79,15 @@ void  MainView::InitializeGL()
 			scene = std::make_unique<SceneToon>();
 			break;
 
-		case SceneId::SHADOW:
-			scene = std::make_unique<SceneShadow>();
+		case SceneId::EDGE:
+			scene = std::make_unique<SceneEdge>();
 			break;
 
-		case SceneId::SHADOWMAP:
-			scene = std::make_unique<SceneShadowMap>();
+		case SceneId::SPOT:
+			scene = std::make_unique<SceneSpot>();
+
+		case SceneId::BLOOM:
+			scene = std::make_unique<SceneBloom>();
 			break;
 	}
 
