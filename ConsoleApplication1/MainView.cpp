@@ -59,6 +59,8 @@ using std::endl;
 
 void  MainView::InitializeGL()
 {
+	//scene = std::make_unique<SceneSpot>();
+
 	int sceneId = 0;
 	cout << "確認したいシーン?\n";
 	
@@ -85,12 +87,12 @@ void  MainView::InitializeGL()
 
 		case SceneId::SPOT:
 			scene = std::make_unique<SceneSpot>();
+			break;
 
 		case SceneId::BLOOM:
 			scene = std::make_unique<SceneBloom>();
 			break;
 	}
-
 
 	glClearColor(0.2f,0.2f,0.2f,1.0f);
 	scene->initScene();
